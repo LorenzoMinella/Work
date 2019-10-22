@@ -78,16 +78,16 @@
                 <div class="container">
                     <div class="row vertical-content">
                         <div class="col-lg-6">
-                            <div class="home-img mt-4">
-                                <img src="{{URL::asset('img/features/img-1.png') }}"  alt="" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
                             <div class="home-content">
-                                <h3 class="home-title" align="center">Tu comprador de alarmas de casa y negocios</h3>
+                                <h3 class="home-title" align="center">Alarmas para <br> negocio</h3>
                                 <div class="mt-5">
                                     <center><a href="" class="btn btn-custom btn-round">COMPRAR ALARMAS </a></center>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="home-img mt-4">
+                                <img src="{{URL::asset('img/features/img-1.png') }}"  alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -100,33 +100,9 @@
     <!-- START CLIENT-LOGO -->
     <section class="client-logo pt-3 pb-3" >
         <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
+                <div class="home-content">
+                    <h4 class="home-title" align="center" style='color:#504460' >Alarmas de seguridad Para empresas</h4>
                 </div>
-                <div class="col-lg-2 " >
-                    <div class="client-img">
-                        <img src="{{URL::asset('img/alarmalia/circulo.png') }}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                    <p class="title-desc text-center text-white-50 mt-4" >Todas las ofertas<br> en un click</p>
-                </div>
-                <div class="col-lg-1">
-                </div>
-                <div class="col-lg-2">
-                    <div class="client-img">
-                        <img src="{{URL::asset('img/alarmalia/circulo.png') }}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                    <p class="title-desc text-center text-white-50 mt-4">Recibe un estudio personalizado</p>
-                </div>
-                <div class="col-lg-1">
-                </div>
-                <div class="col-lg-2 ">
-                    <div class="client-img">
-                        <img src="{{URL::asset('img/alarmalia/circulo.png') }}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                    <p class="title-desc text-center text-white-50 mt-4">Guía gratis con selección de alarmas</p>
-                </div>
-                <div class="col-lg-2">
-                </div>                
             </div>
         </div>
     </section>
@@ -143,7 +119,6 @@
             <div class="row">
                 <div class="col-lg-12">
                 	<br><br>
-                    <h1 class="title-heading text-center">Guía gratuita de compras de alarmas</h1>
                     <p class="title-desc text-center text-white-50 mt-4">La elección de una alarma para hogar o negocio es una decisión importante, ya que debemos escoger la más adecuada en función de las necesidades de seguridad reales que posean el inmueble y su contenido, o el tipo de negocio o actividad que desempeñe, las prestaciones deseadas o el presupuesto que tengamos.
 
                     <br><br>
