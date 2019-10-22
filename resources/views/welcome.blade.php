@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <title>Alarmalia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
-    <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
-    <meta content="Themesdesign" name="author" />
+    <meta name="description" content="Alarmalia - Comparador de Alarmas" />
+    <meta name="keywords" content="Alarmalia, comparador, alarmas" />
+    <meta content="RkPeople" name="author" />
     <!-- favicon -->
     <link rel="shortcut icon" href="{{URL::asset('img/favicon.png')}}">
 
