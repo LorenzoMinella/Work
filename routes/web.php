@@ -44,6 +44,13 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::patch('banners/{id}', ['as'    => 'banners.update', 'uses'    => 'BannerController@update']);
 		Route::delete('banners/{id}', ['as'   => 'banner.destroy', 'uses'   => 'BannerController@destroy']);
 
+		Route::get('users', ['as'           => 'users.index', 'uses'           => 'UserController@index']);
+		Route::get('users/create', ['as'    => 'users.create', 'uses'    => 'UserController@create']);
+		Route::post('users/create', ['as'   => 'users.store', 'uses'   => 'UserController@store']);
+		Route::get('users/{id}', ['as'      => 'users.show', 'uses'      => 'UserController@show']);
+		Route::get('users/{id}/edit', ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+		Route::patch('users/{id}', ['as'    => 'users.update', 'uses'    => 'UserController@update']);
+		Route::delete('users/{id}', ['as'   => 'user.destroy', 'uses'   => 'UserController@destroy']);
 
 
 

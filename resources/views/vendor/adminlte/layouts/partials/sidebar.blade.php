@@ -26,7 +26,7 @@
             <li class="treeview active">
                 <a href="#"><i class='fa fa-link'></i> <span>Administración</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('permissions.index') }}">Usuarios</a></li>
+                    <li><a href="{{ route('users.index') }}">Usuarios</a></li>
                     <li><a href="{{ route('roles.index') }}">Roles</a></li>
                     <li><a href="{{ route('permissions.index') }}">Permisos</a></li>
                 </ul>
