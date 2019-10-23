@@ -23,7 +23,15 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Gestor de Leads</span></a></li>
+            <li class="treeview active">
+                <a href="#"><i class='fa fa-link'></i> <span>Administración</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('permissions.index') }}">Usuarios</a></li>
+                    <li><a href="{{ route('roles.index') }}">Roles</a></li>
+                    <li><a href="{{ route('permissions.index') }}">Permisos</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Gestor de Leads</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>Gestor de Compañias</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestor de Contenidos</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -32,6 +40,7 @@
                     <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
                 </ul>
             </li>
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

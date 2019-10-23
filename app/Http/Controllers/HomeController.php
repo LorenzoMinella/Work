@@ -35,10 +35,4 @@ class HomeController extends Controller
     {
         return view('adminlte::home');
     }
-
-    public function business_page(Request $request)
-    {
-        return view('business');
-    }
-
 }
