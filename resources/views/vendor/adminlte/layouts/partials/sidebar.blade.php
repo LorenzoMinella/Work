@@ -29,10 +29,23 @@
                     <li><a href="{{ route('users.index') }}">Usuarios</a></li>
                     <li><a href="{{ route('roles.index') }}">Roles</a></li>
                     <li><a href="{{ route('permissions.index') }}">Permisos</a></li>
+                    <li><a href="{{ route('banners.index') }}">Banners</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Páginas</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('homepage.index') }}">Home</a></li>
                 </ul>
             </li>
             <li><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Gestor de Leads</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Gestor de Compañias</span></a></li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Gestor de Compañias</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('companies.index') }}">Compañias</a></li>
+                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                </ul>
+            </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestor de Contenidos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

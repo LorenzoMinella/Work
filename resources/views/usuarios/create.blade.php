@@ -33,7 +33,7 @@
 
 
 	{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
-
+    {{ csrf_field() }}
 
          <div class="box box-primary">
             <div class="box-header with-border">

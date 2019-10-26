@@ -33,7 +33,7 @@
 
 
 	{!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
-
+    {{ csrf_field() }}
 
          <div class="box box-primary">
             <div class="box-header with-border">
