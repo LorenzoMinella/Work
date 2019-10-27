@@ -46,7 +46,87 @@
 	})(window,document,'script','dataLayer','GTM-M77GWGH');
 	</script>
 	<!-- End Google Tag Manager -->
+<style type="text/css">
+.carousel-caption {
+top: 60%;
+transform: translateY(-50%);
+bottom: initial;
+left: 60%;
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+transform-style: preserve-3d;
+}
+  
+/*  bhoechie tab */
+div.bhoechie-tab-container{
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 0 !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border:1px solid #ddd;
+  margin-top: 20px;
+  margin-left: 50px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+}
+div.bhoechie-tab-menu{
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group{
+  margin-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group>a{
+  margin-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group>a .glyphicon,
+div.bhoechie-tab-menu div.list-group>a .fa {
+  color: #5A55A3;
+}
+div.bhoechie-tab-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a.active,
+div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+div.bhoechie-tab-menu div.list-group>a.active .fa{
+  background-color: #5A55A3;
+  background-image: #5A55A3;
+  color: #ffffff;
+}
+div.bhoechie-tab-menu div.list-group>a.active:after{
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-left: 10px solid #5A55A3;
+}
 
+div.bhoechie-tab-content{
+  background-color: #ffffff;
+  /* border: 1px solid #eeeeee; */
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+  display: none;
+}
+</style>
 
     
 </head>
@@ -61,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand logo text-uppercase" href="index.html">
+            <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
                 <img src="{{URL::asset('img/logo.png') }}" class="logo-light" alt="" height="80">
                 <img src="{{URL::asset('img/logo.png') }}" class="logo-dark" alt="" height="80">
             </a>
@@ -71,16 +151,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">COMPAÑÍAS</a>
+                        <a href="{{ route('companies.list')}}" class="nav-link">COMPAÑÍAS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">ALARMAS PARA CASA</a>
+                        <a href="{{ route('companies.homealarms')}}" class="nav-link">ALARMAS PARA CASA</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">ALARMAS PARA NEGOCIO</a>
+                        <a href="{{ route('companies.business_alarms')}}" class="nav-link">ALARMAS PARA NEGOCIO</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">FAQS</a>
+                        <a href="{{ route('companies.questions')}}" class="nav-link">FAQS</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">BLOG</a>
@@ -92,69 +172,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Navbar End -->
 
    <!-- START HOME -->
-    <section class="bg-home-1" id="home">
-        <div class="home-bg-overlay"></div>
-        <div class="home-center">
-            <div class="home-desc-center">
-                <div class="container">
-                    <div class="row vertical-content">
-                        <div class="col-lg-6">
-                            <div class="home-img mt-4">
-                                <img src="{{URL::asset($banners->banner_url)}}"  alt="" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="home-content">
-                                <h3 class="home-title" align="center">{{$banners->title}}</h3>
-                                <div class="mt-5">
-                                    <center><a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a></center>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block " width="100%" height="750px" src="{{URL::asset($banners->banner_url)}}"
+        alt="First slide">
+      <div class="carousel-caption">
+                                <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
+                                    <a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
     <!-- END HOME -->
-
-    <!-- START CLIENT-LOGO -->
-    <section class="client-logo pt-3 pb-3" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                </div>
-                <div class="col-lg-2 " >
-                    <div class="client-img">
-                        <img src="{{URL::asset('img/alarmalia/click-copy.png') }}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                    <p class="title-desc text-center text-white-50 mt-4" >Todas las ofertas<br> en un click</p>
-                </div>
-                <div class="col-lg-1">
-                </div>
-                <div class="col-lg-2">
-                    <div class="client-img">
-                        <img src="{{URL::asset('img/alarmalia/customer-copy.png') }}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                    <p class="title-desc text-center text-white-50 mt-4">Recibe un estudio personalizado</p>
-                </div>
-                <div class="col-lg-1">
-                </div>
-                <div class="col-lg-2 ">
-                    <div class="client-img">
-                        <img src="{{URL::asset('img/alarmalia/book-copy.png') }}" alt="logo-img" class="mx-auto img-fluid d-block">
-                    </div>
-                    <p class="title-desc text-center text-white-50 mt-4">Guía gratis con selección de alarmas</p>
-                </div>
-                <div class="col-lg-2">
-                </div>                
-            </div>
-        </div>
-    </section>
-    <!-- END CLIENT-LOGO -->
-
-
-		
 
 
 
@@ -164,175 +196,97 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row">
                 <div class="col-lg-12">
                 	<br><br>
-                    <h1 class="title-heading text-center">Guía gratuita de compras de alarmas</h1>
-                    <p class="title-desc text-center text-white-50 mt-4">{{$homepages->description_home}}</p>
+                    <h1 class="title-heading text-center">Compañias</h1>
+                    <p class="title-desc text-center text-white-50 mt-4">Aquí ira un bello texto introductorio sobre las diferentes compañías de alarma y el beneficio de la comparativa que ofrece Alarmalia.</p>
                         
-                    <div class="mt-5" align="center">
-                            <a href="" class="btn btn-custom btn-round">QUIERO MI GUIA</a>
-                    </div>
-                    
-
-
                     <br><br><br>
-                    <h2 class="title-desca text-center mt-4">Empresas con las que trabajamos</h2>
-                    
 
-                    <div class="col-lg-6 swiper-container">
-                    <div class="swiper-wrapper mt-4">
-                        @foreach($companies as $company)
-                            <div class="swiper-slide" align="center">
-                                <img src="{{URL::asset($company->link_image)}}"  class="img-fluid" />
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <!-- Add Arrows  -->
-                    <div class="swiper-button-next">
-                        <i class="mdi mdi-chevron-right"></i>
-                    </div>
-                    <div class="swiper-button-prev ">
-                        <i class="mdi mdi-chevron-left"></i>
-                    </div>
-                    <br><br><br>
                 </div>
-                </div>
-            <div class="container">
-            <h2 class="title-desca text-center mt-4">¿Qué alarma buscas?</h2>
-            
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="service-box p-2 text-center mt-5"  >
-                        
-                        <a href=""><h5 align="center"><span><img src="{{URL::asset('img/icon/home.png') }}" class="img-fluid" alt=""></span><u> Alarmas para casa</u></h5></a>
 
-                        
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="servicess-box p-2 text-center mt-5">
-                        
-                        <a href=""><h5 align="center"><span><img src="{{URL::asset('img/icon/shop.png') }}" class="img-fluid" alt=""></span><u> Alarmas para negocio</u></h5></a>
-
-                        
-                    </div>              
-                </div>                
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                @foreach($companies as $company)
+                <a href="#" class="list-group-item text-center">
+                  <br/><center><img class="d-block " width="100%" height="100%" src="{{URL::asset($company->link_image)}}"></center>
+                </a>
+                @endforeach
+              </div>
             </div>
-        </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- flight section -->
+                @foreach($companies as $company)
+                <div class="bhoechie-tab-content" style="margin-top: 0;">
+                    <center>
+                    <h1 class="title-heading text-center">{{$company->name}}</h1>
+                    </center>
+                    <p class="title-desc text-center text-white-50 mt-4">{{$company->description}}</p>
+                    <br><br><br>
+                    <h1 class="title-heading text-center">PROS</h1>
 
-			
-                
-            
+                        <ul id="services-list" style="list-style-type: none;">
+                        @foreach( (\App\Advantage::where('company_id', '=',$company->id)->where('advatage_disadvantage', '=', 0)->get()) as $advantage)                        
+                        <li>
+                          <a class="image">
+                            <img src="{{URL::asset('img/icon/check.png') }}" width="30px" />
+                          </a>{{$advantage->content}}
+                        </li>
+                        <br>
+                        @endforeach
+                        </ul>
 
 
-            </div>          
+                    <br><br><br>
+                    <h1 class="title-heading text-center">CONTRAS</h1>
 
-        </div>
-        <br><br><br>
-        <div class="col-lg-12">
-        	<h1 class="title-heading text-center">Como seleccionar una alarma</h1>
-        	<p class="title-desc text-center text-white-50 mt-4">{{$homepages->select_alarm}}</p>
-					
+                        <ul id="services-list" style="list-style-type: none;">
+                        @foreach( (\App\Advantage::where('company_id', '=',$company->id)->where('advatage_disadvantage', '=', 1)->get()) as $advantage)                        
+                        <li>
+                          <a class="image">
+                            <img src="{{URL::asset('img/icon/close.png') }}" width="30px" />
+                          </a>{{$advantage->content}}
+                        </li>
+                        <br>
+                        @endforeach
+                        </ul>
 
-					<div class="col-lg-8">
-    					<div class="guia-box p2 text-center mt-5">
-        					<p class="title-desc" ><span style="font-size:18pt;">1</span>{{$homepages->desc_one}}</p>					
-    					</div>
-					</div>
-					<div class="col-lg-12">
-    					<div class="guiaa-box p2 text-center mt-5">
-        					<p class="title-desc" ><span style="font-size:18pt;">2</span>{{$homepages->desc_two}}</p>
-    					</div>
-					</div>
-					<div class="col-lg-9">
-    					<div class="guia-box p2 text-center mt-5">
-        					<p class="title-desc" ><span style="font-size:18pt;">3</span>{{$homepages->desc_three}}</p>
-    					</div>
-					</div>
-					<div class="mt-5" align="center">
-                            <a href="" class="btn btn-custom btn-round">COMPARAR AHORA</a>
+
+                    <div class="mt-5" align="center">
+                            <a href="{{ route('companies.profile', $company->id) }}" class="btn btn-custom btn-round">Más Información</a>
                     </div>
 
-                    <br><br><br>
-
-                    <center><img src="{{URL::asset('img/alarmalia/candado.png') }}" width="40%" height="40%" alt="logo-img"></center>
-
-                    <br><br><br>
-					<h4 class="text-center">¿Por qué utilizar ALARMALIA?</h4>
-
-        	<p class="title-desc text-center text-white-50 mt-4">{{$homepages->description_middle}}</p>
 
                 </div>
+                @endforeach
+
+
+
+
+
+
+            </div>
+
+            </div>
+            </div>          
+        <br><br><br>
+
     </section>
     <!-- END COUNTER -->
 		
-
-
-
-
-    <!-- START SERVICES -->
-    <section class="client-logo" id="services">
+    <!-- START PRICING -->
+    <section class="section bg-light" id="pricing">
         <div class="container">
-            <div class="row mt-5 pt-3 vertical-content text-center">
-                <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
-                        <div class="services-icon text-center">
-                            <img src="{{URL::asset('img/alarmalia/conocimientomercado.png') }}" class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-heading text-center">CONOCIMIENTO DEL MERCADO</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->card_one}}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
-                        <div class="services-icon text-center">
-                            <img src="{{URL::asset('img/alarmalia/ahorro.png') }}" class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-heading text-center">AHORRO</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->card_two}}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
-                        <div class="services-icon text-center">
-                            <img src="{{URL::asset('img/alarmalia/serviciogratuito.png') }}" class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-heading text-center">SERVICIO GRATUITO</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->card_three}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
-                        <div class="services-icon text-center">
-                            <img src="{{URL::asset('img/alarmalia/rapidez.png') }}" class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-heading text-center">RAPIDEZ</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->card_four}}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
-                        <div class="services-icon text-center">
-                            <img src="{{URL::asset('img/alarmalia/resultadospersonalizados.png') }}" class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-heading text-center">RESULTADOS PERSONALIZADOS</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->card_five}}</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
-                        <div class="services-icon text-center">
-                            <img src="{{URL::asset('img/alarmalia/somosindependientes.png') }}" class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-heading text-center">SOMOS INDEPENDIENTES</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->card_six}}</p>
-                    </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="title-heading text-center">¿Eres un proveedor de alarmas?</h1>
+                    
+                    <center><div class="mt-5">
+                            <a href="" class="btn btn-secondary btn-sm btn-round">ANUNCIARME</a>
+                        </div></center>
                 </div>
             </div>
         </div>
     </section>
-    <!-- END SERVICES -->
+    <!-- END PRICING -->
 
     
     <!-- START COUNTER -->
@@ -352,22 +306,6 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
         </div>
     </section>
     <!-- END COUNTER -->
-
-    <!-- START PRICING -->
-    <section class="section bg-light" id="pricing">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="title-heading text-center">¿Eres un proveedor de alarmas?</h1>
-                    
-                    <center><div class="mt-5">
-                            <a href="" class="btn btn-secondary btn-sm btn-round">ANUNCIARME</a>
-                        </div></center>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END PRICING -->
  
     <!-- START FOOTER -->
     <section class="footer">
@@ -442,7 +380,19 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
     <script src="{{ asset('js/contact.js') }}"></script>
     <script src="{{ asset('js/plugins-init.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+ <script type="text/javascript">
+$(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
 
+</script>
 </body>
 
 </html>

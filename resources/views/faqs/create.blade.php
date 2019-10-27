@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Crear Ventaja/Desventaja
+	Crear Pregunta
 @endsection
 @section('contentheader_title') {{-- TITULO DEL CONTENIDO DE LA VISTA --}}
 
@@ -24,42 +24,39 @@
 		        		
 		        		<table id="" class="table no-border">
 		                    <tbody  id="">
-		                    	<tr class="">				
-                                  {!!link_to_route('advantages.index', $title = 'Regresar',
-                                  $parameters = ['id' => $id_company],
-                                  $attributes = ['class'=>'btn btn-lg bg-blue']);!!}  
+		                    	<tr class="">
+										<a class="btn btn-lg bg-blue" href="{{ route('faqs.index')}}">Regresar</a>				
 								</tr>
 		                    </tbody>
 		                </table>	
 					</div>
 
 
-	{!! Form::open(array('route' => 'advantages.store','method'=>'POST', 'enctype' => 'multipart/form-data')) !!}
+	{!! Form::open(array('route' => 'faqs.store','method'=>'POST')) !!}
     {{ csrf_field() }}
 
 
          <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Crear Ventaja/Desventaja</h3>
+              <h3 class="box-title">Crear Pregunta</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="content">Contenido:</label>
-		            {!! Form::text('content', null, array('placeholder' => 'Contenido','class' => 'form-control', 'required' => 'required')) !!}
+                  <label for="question">Pregunta:</label>
+		            {!! Form::text('question', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
-                  <label for="advatage_disadvantage">Ventaja/Desventaja:</label>
-                {!! Form::select('advatage_disadvantage',['0' => 'Ventaja', '1' => 'Desventaja',], '', array('placeholder' => 'Seleccionar', 'class' => 'form-control', 'required' => 'required')) !!}
+                  <label for="content">Contenido Pregunta:</label>
+		            {!! Form::text('content', null, array('placeholder' => 'Contenido Pregunta','class' => 'form-control')) !!}
                 </div>
-                    <input type="hidden" name="company_id" value="{{$id_company}}">
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Crear Ventaja/Desventaja</button>
+                <button type="submit" class="btn btn-primary">Crear Pregunta</button>
               </div>
             </form>
           </div>

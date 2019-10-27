@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Company;
 use App\Advantage;
+use App\Component;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Storage;
 use File;
 use Crypt;
 
-class AdvantagesController extends Controller
+class ComponentsController extends Controller
 {
     /**
      * Display a listing of the resource.

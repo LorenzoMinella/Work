@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(BannerSeeder::class);
         $this->call(CompanyTableSeeder::class);
         $this->call(HomePageSeeder::class);
+        $this->call(AdvantageSeeder::class);
+        $this->call(FaqSeeder::class);
     }
 }

@@ -12,6 +12,12 @@
 */
 
 Route::get('/', ['as' => 'site.home', 'uses' => 'SiteController@home']);
+Route::get('company/list', ['as'             => 'companies.list', 'uses'           => 'SiteController@companies_list']);
+Route::get('company/{id}', ['as'             => 'companies.profile', 'uses'           => 'SiteController@company']);
+Route::get('homealarms', ['as'             => 'companies.homealarms', 'uses'           => 'SiteController@homealarms']);
+Route::get('business/alarms', ['as'             => 'companies.business_alarms', 'uses'           => 'SiteController@business_alarms']);
+Route::get('advertise', ['as'             => 'companies.advertise', 'uses'           => 'SiteController@advertise']);
+Route::get('questions', ['as'             => 'companies.questions', 'uses'           => 'SiteController@faqs']);
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -22,6 +28,14 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('roles/{id}/edit', ['as' => 'roles.edit', 'uses' => 'RoleController@edit']);
 		Route::patch('roles/{id}', ['as'    => 'roles.update', 'uses'    => 'RoleController@update']);
 		Route::delete('roles/{id}', ['as'   => 'roles.destroy', 'uses'   => 'RoleController@destroy']);
+
+		Route::get('faqs', ['as'           => 'faqs.index', 'uses'           => 'FaqController@index']);
+		Route::get('faqs/create', ['as'    => 'faqs.create', 'uses'    => 'FaqController@create']);
+		Route::post('faqs/create', ['as'   => 'faqs.store', 'uses'   => 'FaqController@store']);
+		Route::get('faqs/{id}', ['as'      => 'faqs.show', 'uses'      => 'FaqController@show']);
+		Route::get('faqs/{id}/edit', ['as' => 'faqs.edit', 'uses' => 'FaqController@edit']);
+		Route::patch('faqs/{id}', ['as'    => 'faqs.update', 'uses'    => 'FaqController@update']);
+		Route::delete('faqs/{id}', ['as'   => 'faqs.destroy', 'uses'   => 'FaqController@destroy']);
 
 
 		Route::get('permissions', ['as'           => 'permissions.index', 'uses'           => 'PermissionController@index']);
@@ -48,7 +62,6 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::patch('users/{id}', ['as'    => 'users.update', 'uses'    => 'UserController@update']);
 		Route::delete('users/{id}', ['as'   => 'user.destroy', 'uses'   => 'UserController@destroy']);
 
-
 		Route::get('companies', ['as'           => 'companies.index', 'uses'           => 'CompaniesController@index']);
 		Route::get('companies/create', ['as'    => 'companies.create', 'uses'    => 'CompaniesController@create']);
 		Route::post('companies/create', ['as'   => 'companies.store', 'uses'   => 'CompaniesController@store']);
@@ -57,13 +70,20 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::patch('companies/{id}', ['as'    => 'companies.update', 'uses'    => 'CompaniesController@update']);
 		Route::delete('companies/{id}', ['as'   => 'companies.destroy', 'uses'   => 'CompaniesController@destroy']);
 
-		Route::get('advantages', ['as'      => 'advantages.index', 'uses'           => 'AdvantagesController@index']);
-		Route::get('advantages/create', ['as'    => 'advantages.create', 'uses'    => 'AdvantagesController@create']);
+		Route::get('advantages/{id}/index', ['as'      => 'advantages.index', 'uses'           => 'AdvantagesController@index']);
+		Route::get('advantages/{id}/create', ['as'    => 'advantages.create', 'uses'    => 'AdvantagesController@create']);
 		Route::post('advantages/create', ['as'   => 'advantages.store', 'uses'   => 'AdvantagesController@store']);
-		Route::get('advantages/{id}', ['as'      => 'advantages.show', 'uses'      => 'AdvantagesController@show']);
 		Route::get('advantages/{id}/edit', ['as' => 'advantages.edit', 'uses' => 'AdvantagesController@edit']);
 		Route::patch('advantages/{id}', ['as'    => 'advantages.update', 'uses'    => 'AdvantagesController@update']);
 		Route::delete('advantages/{id}', ['as'   => 'advantages.destroy', 'uses'   => 'AdvantagesController@destroy']);
+
+		Route::get('components/{id}/index', ['as'      => 'components.index', 'uses'           => 'AdvantagesController@index']);
+		Route::get('components/{id}/create', ['as'    => 'components.create', 'uses'    => 'AdvantagesController@create']);
+		Route::post('components/create', ['as'   => 'components.store', 'uses'   => 'AdvantagesController@store']);
+		Route::get('components/{id}/edit', ['as' => 'components.edit', 'uses' => 'AdvantagesController@edit']);
+		Route::patch('components/{id}', ['as'    => 'components.update', 'uses'    => 'AdvantagesController@update']);
+		Route::delete('components/{id}', ['as'   => 'components.destroy', 'uses'   => 'AdvantagesController@destroy']);
+
 
 		Route::get('homepage', ['as'           => 'homepage.index', 'uses'           => 'SiteController@homepage']);
 		Route::get('homepage/create', ['as'    => 'homepage.create', 'uses'    => 'SiteController@create']);

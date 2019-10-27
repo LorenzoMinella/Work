@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Ventajas y Desventajas de la Compañia
+	Faqs
 @endsection
 @section('contentheader_title') {{-- TITULO DEL CONTENIDO DE LA VISTA --}}
 
@@ -14,19 +14,20 @@
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
+		    {!! Form::open(array('route' => 'faqs.create','method'=>'POST')) !!}
+		     {{ csrf_field() }}
+
 		        	<div class="table-responsive">
 		        		
 		        		<table id="" class="table no-border">
 		                    <tbody  id="">
 		                    	<tr class="">
-
-				                          {!!link_to_route('advantages.create', $title = 'Crear Ventaja o Desventaja',
-				                          $parameters = ['id' => $id_company],
-				                          $attributes = ['class'=>'btn btn-lg bg-blue']);!!}	
+										<a class="btn btn-lg bg-blue" href="{{ route('faqs.create')}}">Crear Nueva Pregunta</a>				
 								</tr>
 		                    </tbody>
 		                </table>	
 					</div>
+		    {!! Form::close() !!}
 	    	@if ($message = Session::get('success'))
 				<div class="alert alert-success">
 					<p>{{ $message }}</p>
@@ -38,32 +39,21 @@
                     <thead>
                     	<tr class="header">
 							<th>No</th>
+							<th>Pregunta</th>
 							<th>Contenido</th>
-							<th>Ventaja/Desventaja</th>
 							<th>Acción</th>
 						</tr>
                     </thead>
                     <tbody>
-						@foreach ($advantages as $key => $advantage)
+						@foreach ($faqs as $key => $faq)
 						<tr>
-							<td>{{ $id_company }}</td>
-							<td>{{ $advantage->content }}</td>
-							<td>
-								@if($advantage->advatage_disadvantage == 0)
-								<p align="justify">	
-									Ventaja
-								</p>
-								@endif
-								@if($advantage->advatage_disadvantage == 1)
-								<p align="justify">	
-									Desventaja
-								</p>
-								@endif
-							</td>
+							<td>{{ $faq->id }}</td>
+							<td>{{ $faq->question }}</td>
+							<td><p align="justify">{{ $faq->content }}</p></td>
 							<td><center>
-								<a class="btn btn-primary" href="{{ route('advantages.edit',$advantage->id) }}">Editar</a>
-								{!! Form::open(['method' => 'DELETE','route' => ['advantages.destroy', $advantage->id],'style'=>'display:inline']) !!}
-			                    <input type="hidden" name="company_id" value="{{$id_company}}">
+								<a class="btn btn-info" href="{{ route('faqs.show',$faq->id) }}">Ver</a>
+								<a class="btn btn-primary" href="{{ route('faqs.edit',$faq->id) }}">Editar</a>
+								{!! Form::open(['method' => 'DELETE','route' => ['faqs.destroy', $faq->id],'style'=>'display:inline']) !!}
 					            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
 					        	{!! Form::close() !!}
 							</center></td>

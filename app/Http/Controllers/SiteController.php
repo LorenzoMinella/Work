@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Banner;
 use App\Company;
 use App\HomePage;
+use App\Faq;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Storage;
@@ -34,6 +35,47 @@ class SiteController extends Controller
         return view('pages.home', compact('homepages'));
     }
 
+    public function companies_list(Request $request)
+    {
+        $homepages = HomePage::all()->first();
+        $banners = Banner::orderBy('id','DESC')->first();
+        $companies = Company::orderBy('id','ASC')->get();
+        return view('company_list', compact('banners', 'companies', 'homepages'));
+    }
+
+    public function company(Request $request, $id)
+    {
+        $banners = Banner::orderBy('id','DESC')->first();
+        $companies = Company::where('id','=', $id)->first();
+        $homepages = HomePage::all()->first();
+        return view('company', compact('banners', 'companies', 'homepages'));
+    }
+
+    public function homealarms(Request $request)
+    {
+        $banners = Banner::orderBy('id','DESC')->first();
+        $homepages = HomePage::all()->first();
+        return view('alarmas_casa', compact('banners', 'homepages'));
+    }
+
+    public function business_alarms(Request $request)
+    {
+        $banners = Banner::orderBy('id','DESC')->first();
+        $homepages = HomePage::all()->first();
+        return view('alarmas_negocio', compact('banners', 'homepages'));
+    }
+
+    public function advertise(Request $request)
+    {
+        $banners = Banner::orderBy('id','DESC')->first();
+        $homepages = HomePage::all()->first();
+        return view('anunciate', compact('banners', 'homepages'));
+    }
+    public function faqs(Request $request)
+    {
+        $faqs = Faq::all();
+        return view('faqs', compact('faqs'));
+    }
 
     public function home_store(Request $request)
     {

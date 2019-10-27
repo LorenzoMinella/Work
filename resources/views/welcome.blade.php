@@ -46,9 +46,6 @@
 	})(window,document,'script','dataLayer','GTM-M77GWGH');
 	</script>
 	<!-- End Google Tag Manager -->
-
-
-    
 </head>
 
 <body>
@@ -61,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand logo text-uppercase" href="index.html">
+            <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
                 <img src="{{URL::asset('img/logo.png') }}" class="logo-light" alt="" height="80">
                 <img src="{{URL::asset('img/logo.png') }}" class="logo-dark" alt="" height="80">
             </a>
@@ -71,16 +68,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">COMPAÑÍAS</a>
+                        <a href="{{ route('companies.list')}}" class="nav-link">COMPAÑÍAS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">ALARMAS PARA CASA</a>
+                        <a href="{{ route('companies.homealarms')}}" class="nav-link">ALARMAS PARA CASA</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">ALARMAS PARA NEGOCIO</a>
+                        <a href="{{ route('companies.business_alarms')}}" class="nav-link">ALARMAS PARA NEGOCIO</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">FAQS</a>
+                        <a href="{{ route('companies.questions')}}" class="nav-link">FAQS</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">BLOG</a>
@@ -120,8 +117,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- START CLIENT-LOGO -->
     <section class="client-logo pt-3 pb-3" >
+
         <div class="container">
             <div class="row">
+
                 <div class="col-lg-2">
                 </div>
                 <div class="col-lg-2 " >
@@ -196,7 +195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <br><br><br>
                 </div>
                 </div>
-            <div class="container">
+        <div class="container">
             <h2 class="title-desca text-center mt-4">¿Qué alarma buscas?</h2>
             
             <div class="row">
@@ -381,7 +380,7 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white">Nosotros</h5>
                 </div>                
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Anunciate</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.advertise') }}">Anunciate</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
                     <h5 class="f-18 text-white">Empresa</h5>
