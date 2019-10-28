@@ -893,6 +893,7 @@ p {
 .client-logo {
   background-color: #EFF5F8;
   padding-bottom: 30px;
+  
 }
 
 .faq-icon {
@@ -1107,6 +1108,11 @@ textarea.form-control {
   }
   .home-title {
     font-size: 38px;
+    color: #663399;
+  }
+
+  .h3-custom {
+    font-size: 30px;
     color: #663399;
   }
   .navbar-button {

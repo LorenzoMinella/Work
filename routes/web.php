@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome', compact('banners'));
 });
 
+Route::get('business/', function () {     return view('business'); });
+
 Route::group(['middleware' => 'auth'], function () {
 
 		Route::get('roles', ['as'           => 'roles.index', 'uses'           => 'RoleController@index']);

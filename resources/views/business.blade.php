@@ -119,19 +119,25 @@
             <div class="row">
                 <div class="col-lg-12">
                 	<br><br>
-                    <p class="title-desc text-center text-white-50 mt-4">La elección de una alarma para hogar o negocio es una decisión importante, ya que debemos escoger la más adecuada en función de las necesidades de seguridad reales que posean el inmueble y su contenido, o el tipo de negocio o actividad que desempeñe, las prestaciones deseadas o el presupuesto que tengamos.
+                    <p class="title-desc text-center text-white-50 mt-4">
+
+                    La Protección de negocio es un aspecto primordial y que se debe a tener en cuenta, <br>
+                    independientemente de su tamaño o actividad. Para muchos casos, como es el de autónomos o <br> 
+                    pequños comercios, puede ser además la base de la ecomonía familiar, por lo que su tranquilidad <br>
+                    pasa por porteger el negocio de posibles robos o adversidades que ponga en peligro los bienes que <br> 
+                    se encuentren en el establecimiento.
 
                     <br><br>
-					Qué alarma elegir… <br>
-					es una de las preguntas más habituales que se hacen las personas que desean instalar un sistema de alarma en su vivienda o negocio ante la diversidad de oferta que hay en el mercado. A continuación se ofrecen una serie de consejos y recomendaciones que ayudan a saber cómo elegir la mejor alarma para negocio u hogar.</p>
-                        
-                    <div class="mt-5" align="center">
-                            <a href="" class="btn btn-custom btn-round">QUIERO MI GUIA</a>
-                    </div>
-                    
 
-
+                    Existen Diversos tipos de sistemas de alarma para negocios, ya que cada empresa o local cuenta con <br> 
+                    características muy distintas y, por tanto, con necesidades diferentes. El método habitual es que, <br>
+                    previamente a la istalación de un sistema de seguirdad de alarmas en un negocio la empresa de <br>
+                    seguirdad analice el caso en concreto y estudie las características particulares del negocio para <br>
+                    proponer el sistema de alarma óptimo. <br>
+                
                     <br><br><br>
+                    <h5 align="center" style='color:#614FA2, font-size:20px'>¿El negocio requiere de un sistema de alarma de negocio cableado o inalámbrico?</h5>
+
                     <h2 class="title-desca text-center mt-4">Empresas con las que trabajamos</h2>
                     
                     	
