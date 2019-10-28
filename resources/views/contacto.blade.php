@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -46,6 +46,9 @@
     })(window,document,'script','dataLayer','GTM-M77GWGH');
     </script>
     <!-- End Google Tag Manager -->
+
+
+    
 </head>
 
 <body>
@@ -100,83 +103,81 @@
     </section>
 
 
-    <!-- START CLIENT-LOGO -->
-    <section class="client-logo pt-1 pb-1" >
+<!-- START CONTACT -->
+    <section class="section" id="contact">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="title-heading text-center">Comparador de alarmas | Sobre Nosotros | Alarmalia</h1>
-                </div>         
-            </div>
-        </div>
-    </section>
-    <!-- END CLIENT-LOGO -->
-		
-
-    <!-- START COUNTER -->
-    <section class="section counter pt-1 pb-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="title-headin text-center">Una idea muy sencilla</h1>
-                    <p class="title-desc text-justify text-white-50 mt-4">Alarmalia fue fundado por un empresario emprendedor en 2017, al que responder a una pregunta sencilla le resultó mucho más difícil de lo previsto. Dos años antes, después de un robo en casa de su madre, decidió buscar la mejor alarma para su propia casa y para la de su progenitora. Comenzó la búsqueda y se preguntó “¿Cómo contratar de manera fácil la alarma más adecuada para nuestra casa?” Pero a veces lo sencillo se torna de repente complicado.
-                    <br>
-                    La respuesta final a esa pregunta es Alarmalia. Llegar a ella significó no sólo crear la infraestructura del comparador de principio a fin, y limpiar y desbrozar los datos correctos del mercado, sino fundamentalmente repensar cómo y por qué contratamos una alarma para nuestra vivienda o negocio.</p>
-                    <br><br> 
-                    <h1 class="title-headin text-center">¿Por qué estamos aquí?</h1>
-                    <p class="title-desc text-justify text-white-50 mt-4">Creemos que no hay ninguna razón por la que la búsqueda y elección de un sistema de alarma no pueda ser sencilla, clara y confiable para cualquier persona. Las opciones deben ser claras, convincentes y darnos seguridad.</p>
-                    <h1 class="title-headin text-center">¿Qué hacemos?</h1>
-                    <p class="title-desc text-justify text-white-50 mt-4">Hemos construido un comparador que facilita que la gente tome decisiones de compra inteligentes en cuanto al servicio de alarma más adecuado para sus necesidades. En un único lugar, gratuitamente y de forma personalizada, ofrecemos las soluciones más adecuadas para cubrir las necesidades del usuario en materia de alarmas. A los proveedores de servicios de alarmas les facilitamos el modo de mostrar de forma clara su tecnología en beneficio de sus consumidores, para que su oferta tenga verdadero sentido para cubrir las necesidades de su cliente y añada un valor real a sus compradores. Ofrecemos a las empresas el instrumento necesario para que la contratación de sus productos y servicios sea algo ágil, sencillo y rentable. Somos la primera empresa que compara la oferta del mercado de alarmas con criterios objetivos y de forma absolutamente independiente.</p>
-                    <h1 class="title-headin text-center">¿Cómo valoramos?</h1>
-                    <p class="title-desc text-justify text-white-50 mt-4">El motor de datos de Alarmalia se encuentra en el corazón de todos nuestros comparativos y potencia todos nuestros productos, recomendaciones y conocimientos. Puntuamos cada oferta del mercado en función de su contenido real y las valoraciones de los usuarios. Esa puntuación es el alma mater de nuestra clasificación del mercado de alarmas. Intuitivamente y de forma sencilla, se normaliza para cada categoría el resultado de 0 a 100, por lo que todo el mundo puede comparar fácilmente los productos ofertados. También se actualiza diariamente para cada categoría, por lo que tenemos la certeza de tener la información más precisa del mercado. Somos un equipo de especialistas en nuestros campos que juntos, estamos convencidos de la posibilidad de combinar la ciencia de los datos y la tecnología. Estamos totalmente volcados en un servicio al cliente exigente al máximo, para cambiar la forma de ver la seguridad en nuestra sociedad.</p>
-                    <br>
-                    <h1 class="title-headin text-center">¿Hacia dónde vamos?</h1>
-                    <p class="title-desc text-justify text-white-50 mt-4">Trabajamos cada día para construir un futuro en el que cada consumidor, ciudadano y empleado reconozca todo el potencial de Alarmalia para hacer de la elección de alarma una decisión inteligente en cuanto a la seguridad de su hogar o negocio.</p>
-                </div>                          
-            </div>          
-        </div>
-        <br><br><br>
-        
-
-    </section>
-    <!-- END COUNTER -->
-		
-
-
-
-
-  
-    
-    <!-- START COUNTER -->
-    <section class="section counter">
-        <div class="container">
-            <div class="col-lg-12" class="row mt-5" id="counter">
-                    <h4 class="text-center">ENCUENTRA TU ALARMA</h4>
-                    <p class="title-desc text-center text-white-50 mt-4" >Ahorra dinero y tiempo con nuestro comparador de alarmas.<br> 
-                        Descubre en 3 minutos la alarma que mejor se adapta a ti.
-                    </p>
-                    <center>
-                        <div class="mt-5">
-                            <a href="{{ route('companies.comparator')}}" class="btn btn-custom  btn-round">COMPARAR AHORA</a>
-                        </div>
-                    </center>
-                </div>            
-        </div>
-    </section>
-    <!-- END COUNTER -->
-    <section class="section bg-light" id="pricing">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="title-heading text-center">¿Eres un proveedor de alarmas?</h1>
-                    
-                    <center><div class="mt-5">
-                            <a href="{{ route('companies.advertise') }}" class="btn btn-secondary btn-sm btn-round">ANUNCIARME</a>
-                        </div></center>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <div class="col-lg-12">
+                    <h4 class="text-center">Contácto</h4>
+            <p class="title-desc text-center text-white-50 mt-4" ></p>
+                </div>
+                    <div class="custom-form mt-3">
+                        <div id="message"></div>
+                        <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group ">
+                                        <input name="name" id="name" class="form-control" placeholder="Nombre*" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group ">
+                                        <input name="name" id="name" class="form-control" placeholder="Apellidos*" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group ">
+                                        <input class="form-control" id="subject" placeholder="Movil" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group ">
+                                        <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Mensaje"></textarea>
+                                    </div>
+                                    <div class="checker" id="uniform-customer_privacy">
+                                      <input type="checkbox" value="0" required  name="customer_privacy" autocomplete="off"> <a class="f-18" href="{{ route('companies.policies') }}">He leído y acepto la política de privacidad</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <input id="submit" name="send" class="submitBnt btn btn-secondary btn-round" value="ENVIAR" type="submit">
+                                    <div id="simple-msg"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- END CONTACT -->
+
+     <!-- START COUNTER -->
+    <section class="section counter">
+        <div class="container">
+            <div class="col-lg-12" class="row mt-5" id="counter">
+                    <h4 class="text-center">ENCUENTRA TU ALARMA</h4>
+            <p class="title-desc text-center text-white-50 mt-4" >Ahorra dinero y tiempo con nuestro comparador de alarmas.<br> 
+Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
+                    <center>
+                        <div class="mt-5">
+                            <a href="" class="btn btn-custom  btn-round">COMPRAR AHORA</a>
+                        </div>
+                    </center>
+                </div>
+            
+        </div>
+    </section>
+    <!-- END COUNTER -->
+
  
     <!-- START FOOTER -->
     <section class="footer">

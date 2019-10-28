@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="title-desc text-center text-white-50 mt-4">{{$homepages->description_home}}</p>
                         
                     <div class="mt-5" align="center">
-                            <a href="" class="btn btn-custom btn-round">QUIERO MI GUIA</a>
+                            <a href="{{URL::asset('guia/guia-seleccion-de-alarmas.pdf') }}"  target="_blank" class="btn btn-custom btn-round">QUIERO MI GUIA</a>
                     </div>
                     
 
@@ -379,7 +379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h5 class="f-18 text-white">Glosario</h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Contacto</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
 					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>

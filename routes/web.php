@@ -22,6 +22,7 @@ Route::get('blog', ['as'             => 'companies.blog', 'uses'           => 'S
 Route::get('comparator', ['as'             => 'companies.comparator', 'uses'           => 'SiteController@comparator']);
 Route::get('aboutus', ['as'             => 'companies.about_us', 'uses'           => 'SiteController@about_us']);
 Route::get('policies', ['as'             => 'companies.policies', 'uses'           => 'SiteController@policies']);
+Route::get('contact', ['as'             => 'companies.contact', 'uses'           => 'SiteController@contact']);
 
 Route::group(['middleware' => 'auth'], function () {
 

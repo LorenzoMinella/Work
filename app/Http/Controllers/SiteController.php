@@ -100,6 +100,11 @@ class SiteController extends Controller
         return view('politica_privacidad');
     }
 
+    public function contact(Request $request)
+    {
+        return view('contacto');
+    }
+
     public function home_store(Request $request)
     {
 
