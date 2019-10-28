@@ -100,131 +100,40 @@
     </section>
 
 
-    <!-- START CLIENT-LOGO -->
-    <section class="client-logo pt-1 pb-1" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="title-heading text-center">ALARMAS DE SEGURIDAD PARA EMPRESAS</h1>
-                </div>         
-            </div>
-        </div>
-    </section>
-    <!-- END CLIENT-LOGO -->
-		
+ 
 
-    <!-- START COUNTER -->
-    <section class="section counter pt-1 pb-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="title-desc text-center text-white-50 mt-4">La protección de un negocio es un aspecto primordial y que se debe tener en cuenta, independientemente de su tamaño o actividad. Para muchos casos, como es el de autónomos o pequeños comercios, puede ser además la base de la economía familiar, por lo que su tranquilidad pasa por proteger el negocio de posibles robos o adversidades que ponga en peligro los bienes que se encuentren en el establecimiento.
-                    <br><br>
-                    Existen diversos tipos de sistemas de alarma para negocios, ya que cada empresa o local cuenta con características muy distintas y, por tanto, con necesidades diferentes. El método habitual es que, previamente a la instalación de un sistema de seguridad de alarmas en un negocio, la empresa de seguridad analice el caso concreto y estudie las características particulares del negocio para proponer el sistema de alarma óptimo.</p>
-                    <br><br>
-                    <h1 class="title-headin text-center">Zona de urbanización con seguridad privada</h1> 
-                    <p class="title-desc text-center text-white-50 mt-4">Esta cuestión depende de muchos factores, uno de los de mayor peso es el tamaño del establecimiento. Si estamos ante un local más bien pequeño seguramente con un sistema de alarmas de negocio inalámbrico en el que los elementos de la misma (sensores, detectores…) se conecten con la central por medio de ondas de radio será suficiente. Sin embargo, si lo que estamos protegiendo es una nave de dimensiones considerables o un local grande con zonas amplias, probablemente sea necesario un sistema mixto o híbrido,que combina elementos cableados (en el que los elementos de la alarma de negocio se conectan con la central por medio de cable) e inalámbricos.</p>
-                    <br><br><br>
-                    <img src="{{URL::asset('img/banercam.png') }}"  class="img-fluid" alt="">
 
-                </div>                          
-            </div>          
-        </div>
-        <br><br><br>
-        
 
+     <!-- START COUNTER -->
+    <section class="section counter mt-4">
         <div class="container">
-            <p class="title-desc text-center text-white-50 mt-4">Existen varios aspectos importantes que se deben tener en cuenta sobre la importancia de contar con una alarma para negocio:</p>
+            <h1 class="title-heading text-center">Sistemas de alarmas para casa y negocio</h1>
             <div class="row">
-                <div class="col-lg-3">
+                @foreach($posts as $post)
+                <div class="col-lg-4">
                     <div class="servicios-box bg-white btn-rounde mt-4">
                         <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/1.png') }}"  class="img-fluid" alt="">
+                            <img src="{{URL::asset($post->url_img) }}"  class="img-fluid" alt="">
                         </div><br>
-                        <h1 class="title-headin text-center">Alarma como elemento dinosaurio</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
+                        <h1 class="title-headin text-center">{{$post->title}}</h1>
+                        <p class="title-desc text-center text-white-50 mt-4">{{trim(substr($post->content, 0, 200))}}...</p>
+                        <br>
+                        <a href="#" class="btn btn-secondary  btn-round">Leer nota completa</a>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/2.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Protección continua</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/3.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Conexión CRA </h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/4.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Botones SOS</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/5.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Detectores con cámara</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/6.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Servicios adicionales </h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
-                 <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/7.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Empresas de seguridad</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="servicios-box bg-white btn-rounde mt-4">
-                        <div class="service-icon text-center">
-                            <img src="{{URL::asset('img/numbers/8.png') }}"  class="img-fluid" alt="">
-                        </div><br>
-                        <h1 class="title-headin text-center">Ley de privacidad</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">Es una buena práctica la instalación de detectores de inundación, que ayudan a descubrir posibles inundaciones y fugas de agua.</p>
-                    </div>
-                </div>
+                </div>                
+                @endforeach
             </div>
             <center>
+                        <div class="mt-5">
+                            <a href="#" class="btn btn-secondary  btn-round">VER MAS</a>
+                        </div>
+                    </center>
+
+            
         </div>
-
-
+ 
     </section>
     <!-- END COUNTER -->
-		
-
-
-
-
-  
-    
-    <!-- START COUNTER -->
     <section class="section counter">
         <div class="container">
             <div class="col-lg-12" class="row mt-5" id="counter">
@@ -240,8 +149,6 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
             
         </div>
     </section>
-    <!-- END COUNTER -->
-
  
     <!-- START FOOTER -->
     <section class="footer">

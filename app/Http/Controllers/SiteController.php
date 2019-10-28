@@ -8,6 +8,7 @@ use App\Banner;
 use App\Company;
 use App\HomePage;
 use App\Faq;
+use App\Post;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Storage;
@@ -75,6 +76,28 @@ class SiteController extends Controller
     {
         $faqs = Faq::all();
         return view('faqs', compact('faqs'));
+    }
+
+    public function blog(Request $request)
+    {
+        $posts = Post::orderBy('id','ASC')->get();
+        return view('blog', compact('posts'));
+
+    }
+
+    public function comparator(Request $request)
+    {
+        return view('comparador');
+    }
+
+    public function about_us(Request $request)
+    {
+        return view('about_us');
+    }
+
+    public function policies(Request $request)
+    {
+        return view('politica_privacidad');
     }
 
     public function home_store(Request $request)

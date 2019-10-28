@@ -18,6 +18,10 @@ Route::get('homealarms', ['as'             => 'companies.homealarms', 'uses'    
 Route::get('business/alarms', ['as'             => 'companies.business_alarms', 'uses'           => 'SiteController@business_alarms']);
 Route::get('advertise', ['as'             => 'companies.advertise', 'uses'           => 'SiteController@advertise']);
 Route::get('questions', ['as'             => 'companies.questions', 'uses'           => 'SiteController@faqs']);
+Route::get('blog', ['as'             => 'companies.blog', 'uses'           => 'SiteController@blog']);
+Route::get('comparator', ['as'             => 'companies.comparator', 'uses'           => 'SiteController@comparator']);
+Route::get('aboutus', ['as'             => 'companies.about_us', 'uses'           => 'SiteController@about_us']);
+Route::get('policies', ['as'             => 'companies.policies', 'uses'           => 'SiteController@policies']);
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -32,7 +36,6 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('faqs', ['as'           => 'faqs.index', 'uses'           => 'FaqController@index']);
 		Route::get('faqs/create', ['as'    => 'faqs.create', 'uses'    => 'FaqController@create']);
 		Route::post('faqs/create', ['as'   => 'faqs.store', 'uses'   => 'FaqController@store']);
-		Route::get('faqs/{id}', ['as'      => 'faqs.show', 'uses'      => 'FaqController@show']);
 		Route::get('faqs/{id}/edit', ['as' => 'faqs.edit', 'uses' => 'FaqController@edit']);
 		Route::patch('faqs/{id}', ['as'    => 'faqs.update', 'uses'    => 'FaqController@update']);
 		Route::delete('faqs/{id}', ['as'   => 'faqs.destroy', 'uses'   => 'FaqController@destroy']);
@@ -53,6 +56,14 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('banners/{id}/edit', ['as' => 'banner.edit', 'uses' => 'BannerController@edit']);
 		Route::patch('banners/{id}', ['as'    => 'banners.update', 'uses'    => 'BannerController@update']);
 		Route::delete('banners/{id}', ['as'   => 'banner.destroy', 'uses'   => 'BannerController@destroy']);
+
+		Route::get('posts', ['as'           => 'posts.index', 'uses'           => 'PostController@index']);
+		Route::get('posts/create', ['as'    => 'posts.create', 'uses'    => 'PostController@create']);
+		Route::post('posts/create', ['as'   => 'posts.store', 'uses'   => 'PostController@store']);
+		Route::get('posts/{id}/edit', ['as' => 'posts.edit', 'uses' => 'PostController@edit']);
+		Route::patch('posts/{id}', ['as'    => 'posts.update', 'uses'    => 'PostController@update']);
+		Route::delete('posts/{id}', ['as'   => 'posts.destroy', 'uses'   => 'PostController@destroy']);
+
 
 		Route::get('users', ['as'           => 'users.index', 'uses'           => 'UserController@index']);
 		Route::get('users/create', ['as'    => 'users.create', 'uses'    => 'UserController@create']);

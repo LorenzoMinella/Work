@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.app')
 
 @section('htmlheader_title')
-	Faqs
+	Posts
 @endsection
 @section('contentheader_title') {{-- TITULO DEL CONTENIDO DE LA VISTA --}}
 
@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-		    {!! Form::open(array('route' => 'faqs.create','method'=>'POST')) !!}
+		    {!! Form::open(array('route' => 'posts.create','method'=>'POST')) !!}
 		     {{ csrf_field() }}
 
 		        	<div class="table-responsive">
@@ -22,7 +22,7 @@
 		        		<table id="" class="table no-border">
 		                    <tbody  id="">
 		                    	<tr class="">
-										<a class="btn btn-lg bg-blue" href="{{ route('faqs.create')}}">Crear Nueva Pregunta</a>				
+										<a class="btn btn-lg bg-blue" href="{{ route('posts.create')}}">Crear Nuevo Post</a>				
 								</tr>
 		                    </tbody>
 		                </table>	
@@ -39,20 +39,28 @@
                     <thead>
                     	<tr class="header">
 							<th>No</th>
-							<th>Pregunta</th>
-							<th>Contenido</th>
+							<th>Titulo Post</th>
+							<th>Imagen Post</th>
+							<th>Archivo Cargado</th>
 							<th>Acción</th>
 						</tr>
                     </thead>
                     <tbody>
-						@foreach ($faqs as $key => $faq)
+						@foreach ($posts as $key => $post)
 						<tr>
-							<td>{{ $faq->id }}</td>
-							<td>{{ $faq->question }}</td>
-							<td><p align="justify">{{ $faq->content }}</p></td>
+							<td>{{ $post->id }}</td>
+							<td>{{ $post->title }}</td>
+							<td><center><img src="{{URL::asset($post->url_img)}}" width="40%" height="10%"/></center></td>
+							<td>
+								@if($post->post_file == '')
+									No posee Archivo Asociado.
+								@else
+									<font color=blue><a style="color:#0000ff" href="{{URL::to($post->post_file)}}" target="_blank">{{$post->title}}</a></font>
+								@endif
+							</td>
 							<td><center>
-								<a class="btn btn-primary" href="{{ route('faqs.edit',$faq->id) }}">Editar</a>
-								{!! Form::open(['method' => 'DELETE','route' => ['faqs.destroy', $faq->id],'style'=>'display:inline']) !!}
+								<a class="btn btn-primary" href="{{ route('posts.edit',$post->id) }}">Editar</a>
+								{!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $post->id],'style'=>'display:inline']) !!}
 					            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
 					        	{!! Form::close() !!}
 							</center></td>

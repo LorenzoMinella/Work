@@ -79,7 +79,7 @@
                         <a href="{{ route('companies.questions')}}" class="nav-link">FAQS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">BLOG</a>
+                        <a href="{{ route('companies.blog')}}" class="nav-link">BLOG</a>
                     </li>
                 </ul>
             </div>
@@ -156,7 +156,7 @@
                                         <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Mensaje"></textarea>
                                     </div>
                                     <div class="checker" id="uniform-customer_privacy">
-                                      <input type="checkbox" value="0" required  name="customer_privacy" autocomplete="off"> He leído y acepto la política de privacidad
+                                      <input type="checkbox" value="0" required  name="customer_privacy" autocomplete="off"> <a class="f-18" href="{{ route('companies.policies') }}">He leído y acepto la política de privacidad</a>
                                     </div>
                                 </div>
                             </div>
@@ -202,13 +202,13 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <img src="{{URL::asset('img/alarmalia/claro.png') }}" alt="" height="70">
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Nosotros</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.about_us') }}">Nosotros</a></h5>
                 </div>                
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Anunciate</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.advertise') }}">Anunciate</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Empresa</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
                     <h5 class="f-18 text-white">Glosario</h5>
@@ -217,14 +217,15 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white">Contacto</h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-                	<img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20">
-                	<img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20">
-                	<img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20">
+                    <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                    <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
+                    <a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
                 </div>
                
 
                 <div class="start-form mt-4 pt-3 text-center">
                     <form action="#">
+                    {{ csrf_field() }}
                         <input placeholder="Tu email " type="text">
                         <button type="submit" class="btn  btn-roundes">ENVIAR</button>
                     </form>

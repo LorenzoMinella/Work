@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -99,60 +99,58 @@
       </div>
     </section>
 
-
+ <!-- START CLIENT-LOGO -->
+    <section class="cliente-logo pt-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h3 class="title-headin">¡ Falta poco para saber sobre tu alarma ideal! </h3>
+                    
+                    <br>
+            <div class="progress">
+                <div class="progress-bar" style="width:100%; background:#614FA2;">
+                    <span ></span>
+                    <div class="progress-value"><span><img src="{{URL::asset('img/alarmalia/oscuro.png') }}" alt="" height="100%" width="100%"></span></div>
+                </div>
+            </div>
+            
+            <h3 class="title-headin"> Quedan: 30 segundos </h3>
+                </div>
+                            
+            </div>
+        </div>
+    </section>
+    <!-- END CLIENT-LOGO -->
+ 
 <!-- START CONTACT -->
     <section class="section" id="contact">
         <div class="container">
             <div class="row justify-content-center mt-5">
-                <div class="col-lg-10">
+                <div class="col-lg-18">
                     <div class="col-lg-12">
-                    <h4 class="text-center">PREGUNTAS FRECUENTES</h4>
+                    <h4 class="title-heading">¿ Qué quieres hacer con el sistema de alarma?</h4>
             
             <br><br>
-<div class="accordion" id="accordionExample">
-    @foreach($faqs as $faq)
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $faq->id }}" aria-expanded="true" aria-controls="collapse{{ $faq->id }}">
-              <h1 class="title-headin text-center">{{ $faq->question }}</h1>
-            </button>
-          
-        </div>
+                <div class="quiz" id="quiz" data-toggle="buttons">
+           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">1 One</label>
+           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">2 Two</label>
+           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">3 Three</label>
+           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">4 Four</label>
+       </div>
+                
+                <center>
+                    <div class="mt-5">
+                            <a href="" class="btn btn-custom  btn-round">ANTERIOR</a>
+                        
 
-        <div id="collapse{{ $faq->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-            <p align="justify">{{ $faq->content }} </p>
-          </div>
-        </div>
-      </div>
-    @endforeach
-</div>
-
+                            <a href="" class="btn btn-custom  btn-round">SIGUIENTE</a>
+                        </div>
+                    </center>
             </div>
         </div>
     </section>
     <!-- END CONTACT -->
 
-     <!-- START COUNTER -->
-    <section class="section counter">
-        <div class="container">
-            <div class="col-lg-12" class="row mt-5" id="counter">
-                    <h4 class="text-center">ENCUENTRA TU ALARMA</h4>
-            <p class="title-desc text-center text-white-50 mt-4" >Ahorra dinero y tiempo con nuestro comparador de alarmas.<br> 
-Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
-                    <center>
-                        <div class="mt-5">
-                            <a href="" class="btn btn-custom  btn-round">COMPARAR AHORA</a>
-                        </div>
-                    </center>
-                </div>
-            
-        </div>
-    </section>
-    <!-- END COUNTER -->
-
- 
     <!-- START FOOTER -->
     <section class="footer">
         <div class="container">
