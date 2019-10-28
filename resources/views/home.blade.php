@@ -1,5 +1,7 @@
 @extends('layouts.app')
+@section('contentheader_title') {{-- TITULO DEL CONTENIDO DE LA VISTA --}}
 
+@stop
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -13,7 +15,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     You are logged in!
                 </div>
             </div>

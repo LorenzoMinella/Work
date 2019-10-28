@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Alarmalia</title>
+    <title>Comparador de Alarmas | Tu alarma al mejor precio | Alarmalia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alarmalia - Comparador de Alarmas" />
-    <meta name="keywords" content="Alarmalia, comparador, alarmas" />
+    <meta name="description" content="Alarmalia es un comparador de alarmas para el hogar y negocio en el que puedes encontrar la mejor alarma al mejor precio. ¡Descubre tu mejor alarma!" />
+    <meta name="keywords" content="alarma, tyco alarmas, prosegur alarmas, vigilante" />
     <meta content="RkPeople" name="author" />
     <!-- favicon -->
     <link rel="shortcut icon" href="{{URL::asset('img/favicon.png')}}">

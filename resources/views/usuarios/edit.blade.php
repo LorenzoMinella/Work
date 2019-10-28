@@ -33,7 +33,7 @@
 
 
 	{!! Form::model($users, ['method' => 'PATCH','route' => ['users.update', $users->id]]) !!}
-
+    {{ csrf_field() }}
 
          <div class="box box-primary">
             <div class="box-header with-border">

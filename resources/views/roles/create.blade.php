@@ -33,6 +33,7 @@
 
 
 	{!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+    {{ csrf_field() }}
 
 
          <div class="box box-primary">
