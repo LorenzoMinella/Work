@@ -59,6 +59,10 @@
                   <label for="roles">Rol del Usuario:</label>
                         {!! Form::select('roles', $roles, null, array('required' => 'required', 'class' => 'form-control', 'id' => 'roles', 'placeholder' => 'Seleccionar un Rol')) !!}
                 </div>
+                <div class="form-group">
+                  <label for="companies">Compañia a la que se encuentra asociado el Usuario:</label>
+                        {!! Form::select('companies', $companies, null, array('required' => 'required', 'class' => 'form-control', 'id' => 'companies', 'placeholder' => 'Seleccionar una Compañia')) !!}
+                </div>
               </div>
               <!-- /.box-body -->
 

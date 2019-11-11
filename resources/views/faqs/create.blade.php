@@ -52,6 +52,10 @@
                   <label for="content">Contenido Pregunta:</label>
 		            {!! Form::text('content', null, array('placeholder' => 'Contenido Pregunta','class' => 'form-control')) !!}
                 </div>
+				<div class="form-group">
+					<label for="categories">Categoría:</label>
+				       {!! Form::select('categories',$categories,[], array('class' => 'form-control preguntas', 'id' => 'preguntas', 'title' => 'Seleccionar', 'placeholder' => 'Seleccionar', 'required' => 'required' )) !!}
+				</div>
               </div>
               <!-- /.box-body -->
 

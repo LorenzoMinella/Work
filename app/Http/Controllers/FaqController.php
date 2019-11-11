@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Faq;
+use App\FaqCategory;
 use App\Permission;
 use DB;
 
@@ -28,7 +29,8 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('faqs.create');
+        $categories = FaqCategory::pluck('category_name', 'id');
+        return view('faqs.create', compact('categories'));
     }
 
     /**
@@ -43,11 +45,13 @@ class FaqController extends Controller
         $this->validate($request, [
             'question' => 'required',
             'content' => 'required',
+            'categories' => 'required',
         ]);
 
         $faq = new Faq();
         $faq->question = $request->input('question');
         $faq->content = $request->input('content');
+        $faq->faq_category_id = $request->input('categories');
         $faq->save();
 
         return redirect()->route('faqs.index')
@@ -63,8 +67,9 @@ class FaqController extends Controller
     public function edit($id)
     {
         $faq = Faq::find($id);
+        $categories = FaqCategory::pluck('category_name', 'id');
 
-        return view('faqs.edit', compact('faq'));
+        return view('faqs.edit', compact('faq', 'categories'));
     }
 
     /**
@@ -79,12 +84,14 @@ class FaqController extends Controller
         $this->validate($request, [
             'question' => 'required',
             'content' => 'required',
+            'categories' => 'required',
         ]);
 
 
         $faq = Faq::find($id);
         $faq->question = $request->input('question');
         $faq->content = $request->input('content');
+        $faq->faq_category_id = $request->input('categories');
         $faq->update();
 
         return redirect()->route('faqs.index')

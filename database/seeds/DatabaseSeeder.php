@@ -18,6 +18,12 @@ class DatabaseSeeder extends Seeder
         $this->call(CompanyTableSeeder::class);
         $this->call(HomePageSeeder::class);
         $this->call(AdvantageSeeder::class);
+        $this->call(FaqCategorySeeder::class);
         $this->call(FaqSeeder::class);
+        $this->call(FormTableSeeder::class);
+        $this->call(QuestionSeeder::class);
+        $this->call(AnswerSeeder::class);
+        $this->call(GlosarySeeder::class);
+
     }
 }

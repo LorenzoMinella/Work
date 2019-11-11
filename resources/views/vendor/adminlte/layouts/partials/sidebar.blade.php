@@ -37,20 +37,29 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('homepage.index') }}">Home</a></li>
                     <li><a href="{{ route('faqs.index') }}">Faqs</a></li>
+                    <li><a href="{{ route('faqs_categories.index') }}">Categorías Faqs</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Gestor de Leads</span></a></li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Gestor de Leads</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('forms.index') }}">Formulario Comparador</a></li>
+                    <li><a href="{{ route('leads.index') }}">Leads</a></li>
+                </ul>
+            </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestor de Compañias</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('companies.index') }}">Compañias</a></li>
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                    <li><a href="{{ route('advertises.index') }}">Formulario Anunciate</a></li>
+                    <li><a href="{{ route('contact.index') }}">Formulario Contácto</a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Gestor de Contenidos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('posts.index') }}">Posts</a></li>
+                    <li><a href="{{ route('glosaries.index') }}">Glosario</a></li>
                 </ul>
             </li>
 

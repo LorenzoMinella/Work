@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Role;
 use App\User;
+use App\Company;
+
 use DB;
 
 class UserController extends Controller
@@ -26,6 +28,8 @@ class UserController extends Controller
             ->select('users.*', 'roles.display_name')
             ->get();
 
+
+
         return view('usuarios.index',compact('users'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -38,7 +42,9 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::pluck('display_name', 'id');
-        return view('usuarios.create',compact('roles'));
+        $companies = Company::orderBy('id','DESC')->pluck('name', 'id');
+
+        return view('usuarios.create',compact('roles', 'companies'));
     }
 
     /**
@@ -55,11 +61,13 @@ class UserController extends Controller
             'name' => 'required',
             'password' => 'required|min:6',
             'roles' => 'required',
+            'companies' => 'required',
         ]);
 
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->company_id = $request->input('companies');
         if (!empty($request->input('password'))) {
             $user->password = bcrypt($request->input('password'));
         }
@@ -104,10 +112,12 @@ class UserController extends Controller
             ->where('users.id', '=', $id)
             ->select('users.*', 'roles.id as rol')
             ->first();
+        $companies = Company::orderBy('id','DESC')->pluck('name', 'id');
+        $company = Company::where('id', '=', $users->company_id)->get();
 
         $roles = Role::pluck('display_name', 'id');
 
-        return view('usuarios.edit',compact('users', 'roles'));
+        return view('usuarios.edit',compact('users', 'roles', 'companies', 'company'));
     }
 
     /**
@@ -123,11 +133,13 @@ class UserController extends Controller
             'email' => 'required',
             'name' => 'required',
             'roles' => 'required',
+            'companies' => 'required',
         ]);
 
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->company_id = $request->input('companies');
         if (!empty($request->input('password'))) {
             $user->password = bcrypt($request->input('password'));
         }

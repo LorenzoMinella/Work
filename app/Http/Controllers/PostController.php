@@ -123,6 +123,13 @@ class PostController extends Controller
         return view('posts.edit',compact('post'));
     }
 
+    public function post_view($id)
+    {
+        $post = Post::find($id);
+        return view('posts.post',compact('post'));
+    }
+
+
     /**
      * Update the specified resource in storage.
      *

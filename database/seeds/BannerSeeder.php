@@ -14,7 +14,7 @@ class BannerSeeder extends Seeder
     {
         Banner::create([
             'title' => 'Tu comparador de alarmas de casa y negocio',
-            'banner_url' => 'img/features/img-1.png',
+            'banner_url' => 'img/features/banner.png',
             'link_url' => 'http://www.twitter.com'
         ]);
     }

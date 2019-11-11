@@ -138,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -173,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
    <!-- START HOME -->
     <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel slide" >
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block " width="100%" height="750px" src="{{URL::asset($banners->banner_url)}}"
@@ -525,15 +525,14 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -552,7 +551,7 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>

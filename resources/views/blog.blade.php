@@ -51,7 +51,7 @@
 <body>
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -85,18 +85,22 @@
     <!-- Navbar End -->
 
 
+    <br>
+    <br>
+
     <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{URL::asset('img/features/img-1.png') }}"  class="d-block " width="100%" height="750px" src="#" alt="First slide" >
-            <div class="carousel-caption">
-                   <h3 class="h3-responsive home-title">Alarmas para negocio</h3>
-                    <a href="#" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+        <div id="carouselExampleControls" >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block " width="100%" height="100%" src="{{URL::asset($banners->banner_url)}}"
+                alt="First slide">
+              <div class="carousel-caption">
+                                        <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
+                                            <a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
 
@@ -105,31 +109,24 @@
 
 
      <!-- START COUNTER -->
-    <section class="section counter mt-4">
+    <section class="section counter mt-6">
         <div class="container">
             <h1 class="title-heading text-center">Sistemas de alarmas para casa y negocio</h1>
             <div class="row">
                 @foreach($posts as $post)
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="servicios-box bg-white btn-rounde mt-4">
                         <div class="service-icon text-center">
                             <img src="{{URL::asset($post->url_img) }}"  class="img-fluid" alt="">
                         </div><br>
                         <h1 class="title-headin text-center">{{$post->title}}</h1>
-                        <p class="title-desc text-center text-white-50 mt-4">{{trim(substr($post->content, 0, 200))}}...</p>
+                        <p class="title-desc text-justify text-white-50 mt-4">{{trim(substr($post->content, 0, 200))}}...</p>
                         <br>
-                        <a href="#" class="btn btn-secondary  btn-round">Leer nota completa</a>
+                        <a href="{{route('post.blog', $post->id)}}" class="btn btn-secondary  btn-round">Leer nota completa</a>
                     </div>
                 </div>                
                 @endforeach
-            </div>
-            <center>
-                        <div class="mt-5">
-                            <a href="#" class="btn btn-secondary  btn-round">VER MAS</a>
-                        </div>
-                    </center>
-
-            
+            </div>            
         </div>
  
     </section>
@@ -138,8 +135,10 @@
         <div class="container">
             <div class="col-lg-12" class="row mt-5" id="counter">
                     <h4 class="text-center">ENCUENTRA TU ALARMA</h4>
-            <p class="title-desc text-center text-white-50 mt-4" >Ahorra dinero y tiempo con nuestro comparador de alarmas.<br> 
-Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
+                    <p class="title-desc text-center text-white-50 mt-4">
+                        Ahorra dinero y tiempo con nuestro comparador de alarmas.<br> 
+                        Descubre en 3 minutos la alarma que mejor se adapta a ti.
+                    </p>
                     <center>
                         <div class="mt-5">
                             <a href="" class="btn btn-custom  btn-round">COMPARAR AHORA</a>
@@ -168,15 +167,14 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -195,7 +193,7 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>

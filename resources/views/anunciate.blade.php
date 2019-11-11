@@ -54,7 +54,7 @@
 <body>
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -87,19 +87,22 @@
     </nav>
     <!-- Navbar End -->
 
+    <br>
+    <br>
 
     <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{URL::asset('img/features/img-1.png') }}"  class="d-block " width="100%" height="750px" src="#" alt="First slide" >
-            <div class="carousel-caption">
-                   <h3 class="h3-responsive home-title">Alarmas para negocio</h3>
-                    <a href="#" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+        <div id="carouselExampleControls" class="carousel slide" >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block " width="100%" height="100%" src="{{URL::asset($banners->banner_url)}}"
+                alt="First slide">
+              <div class="carousel-caption">
+                                        <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
+                                            <a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
 
@@ -114,49 +117,50 @@
                 </div>
                     <div class="custom-form mt-3">
                         <div id="message"></div>
-                        <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
+                            {!! Form::open(array('route' => 'advertise.store','method'=>'POST')) !!}
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group ">
-                                        <input name="name" id="name" class="form-control" placeholder="Nombre*" type="text">
+                                        {!! Form::text('name', null, array('placeholder' => 'Nombre: ','class' => 'form-control', 'required' => 'required')) !!}
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group ">
-                                        <input name="name" id="name" class="form-control" placeholder="Apellidos*" type="text">
+                                        {!! Form::text('lastname', null, array('placeholder' => 'Apellido: ','class' => 'form-control', 'required' => 'required')) !!}
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group ">
-                                        <input name="name" id="name" class="form-control" placeholder="Empresa*" type="text">
+                                        {!! Form::text('company_name', null, array('placeholder' => 'Empresa: ','class' => 'form-control', 'required' => 'required')) !!}
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group ">
-                                        <input name="name" id="name" class="form-control" placeholder="Email de empresa*" type="text">
+                                        {!! Form::email('company_email', null, array('placeholder' => 'Email: ','class' => 'form-control', 'required' => 'required')) !!}
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group ">
-                                        <input class="form-control" id="subject" placeholder="Movil" type="text">
+                                        {!! Form::text('phone', null, array('placeholder' => 'Teléfono: ','class' => 'form-control', 'required' => 'required')) !!}
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group ">
-                                        <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Mensaje"></textarea>
+                                        {!! Form::textarea('message', null, array('placeholder' => 'Mensaje: ','class' => 'form-control', 'required' => 'required')) !!}
                                     </div>
                                     <div class="checker" id="uniform-customer_privacy">
-                                      <input type="checkbox" value="0" required  name="customer_privacy" autocomplete="off"> <a class="f-18" href="{{ route('companies.policies') }}">He leído y acepto la política de privacidad</a>
+                                      <input type="checkbox" value="0" required  name="terms" autocomplete="off"> <a class="f-18" style="color: #666666;" href="{{ route('companies.policies') }}"><b> He leído y acepto la política de privacidad</b></a>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +170,7 @@
                                     <div id="simple-msg"></div>
                                 </div>
                             </div>
-                        </form>
+                    {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -183,7 +187,7 @@
 Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <center>
                         <div class="mt-5">
-                            <a href="" class="btn btn-custom  btn-round">COMPRAR AHORA</a>
+                            <a href="{{ route('companies.comparator')}}" class="btn btn-custom  btn-round">COMPARAR AHORA</a>
                         </div>
                     </center>
                 </div>
@@ -211,15 +215,14 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -238,7 +241,7 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>

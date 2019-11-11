@@ -17,14 +17,19 @@ Route::get('company/{id}', ['as'             => 'companies.profile', 'uses'     
 Route::get('homealarms', ['as'             => 'companies.homealarms', 'uses'           => 'SiteController@homealarms']);
 Route::get('business/alarms', ['as'             => 'companies.business_alarms', 'uses'           => 'SiteController@business_alarms']);
 Route::get('advertise', ['as'             => 'companies.advertise', 'uses'           => 'SiteController@advertise']);
-Route::get('questions', ['as'             => 'companies.questions', 'uses'           => 'SiteController@faqs']);
+Route::get('faaqs', ['as'             => 'companies.questions', 'uses'           => 'SiteController@faqs']);
 Route::get('blog', ['as'             => 'companies.blog', 'uses'           => 'SiteController@blog']);
+Route::get('blog/post/{id}', ['as'             => 'post.blog', 'uses'           => 'PostController@post_view']);
 Route::get('comparator', ['as'             => 'companies.comparator', 'uses'           => 'SiteController@comparator']);
+Route::get('comparator_camino/{id}', ['as'             => 'companies.comparator_camino', 'uses'           => 'SiteController@comparator_camino']);
+Route::post('comparator', ['as'   => 'comparator.store', 'uses'   => 'SiteController@store_comparator']);
 Route::get('aboutus', ['as'             => 'companies.about_us', 'uses'           => 'SiteController@about_us']);
 Route::get('policies', ['as'             => 'companies.policies', 'uses'           => 'SiteController@policies']);
 Route::get('contact', ['as'             => 'companies.contact', 'uses'           => 'SiteController@contact']);
+Route::get('glosary', ['as'             => 'companies.glosary', 'uses'           => 'SiteController@glosary']);
+Route::post('advertise', ['as'   => 'advertise.store', 'uses'   => 'SiteController@advertise_store']);
+Route::post('contact', ['as'   => 'contact.store', 'uses'   => 'SiteController@contact_store']);
 
-Route::get('business/', function () {     return view('business'); });
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -36,6 +41,21 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::patch('roles/{id}', ['as'    => 'roles.update', 'uses'    => 'RoleController@update']);
 		Route::delete('roles/{id}', ['as'   => 'roles.destroy', 'uses'   => 'RoleController@destroy']);
 
+		Route::get('leads', ['as'           => 'leads.index', 'uses'           => 'LeadController@index']);
+		Route::get('leads/{id}', ['as'      => 'leads.show', 'uses'      => 'LeadController@show']);
+		Route::get('leads/{id}/edit', ['as' => 'leads.edit', 'uses' => 'LeadController@edit']);
+		Route::patch('leads/{id}', ['as'    => 'leads.update', 'uses'    => 'LeadController@update']);
+		Route::delete('leads/{id}', ['as'   => 'leads.destroy', 'uses'   => 'LeadController@destroy']);
+
+
+		Route::get('glosaries', ['as'           => 'glosaries.index', 'uses'           => 'GlosaryController@index']);
+		Route::get('glosaries/create', ['as'    => 'glosary.create', 'uses'    => 'GlosaryController@create']);
+		Route::post('glosaries/create', ['as'   => 'glosaries.store', 'uses'   => 'GlosaryController@store']);
+		Route::get('glosaries/{id}', ['as'      => 'glosary.show', 'uses'      => 'GlosaryController@show']);
+		Route::get('glosaries/{id}/edit', ['as' => 'glosaries.edit', 'uses' => 'GlosaryController@edit']);
+		Route::patch('glosaries/{id}', ['as'    => 'glosaries.update', 'uses'    => 'GlosaryController@update']);
+		Route::delete('glosaries/{id}', ['as'   => 'glosaries.destroy', 'uses'   => 'GlosaryController@destroy']);		
+
 		Route::get('faqs', ['as'           => 'faqs.index', 'uses'           => 'FaqController@index']);
 		Route::get('faqs/create', ['as'    => 'faqs.create', 'uses'    => 'FaqController@create']);
 		Route::post('faqs/create', ['as'   => 'faqs.store', 'uses'   => 'FaqController@store']);
@@ -43,6 +63,54 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::patch('faqs/{id}', ['as'    => 'faqs.update', 'uses'    => 'FaqController@update']);
 		Route::delete('faqs/{id}', ['as'   => 'faqs.destroy', 'uses'   => 'FaqController@destroy']);
 
+
+		Route::get('faqs/categories', ['as'           => 'faqs_categories.index', 'uses'           => 'FaqCategoryController@index']);
+		Route::get('faqs/categories/create', ['as'    => 'faqs_categories.create', 'uses'    => 'FaqCategoryController@create']);
+		Route::post('faqs/categories/create', ['as'   => 'faqs_categories.store', 'uses'   => 'FaqCategoryController@store']);
+		Route::get('faqs/categories/{id}/edit', ['as' => 'faqs_categories.edit', 'uses' => 'FaqCategoryController@edit']);
+		Route::patch('faqs/categories/{id}', ['as'    => 'faqs_categories.update', 'uses'    => 'FaqCategoryController@update']);
+		Route::delete('faqs/categories/{id}', ['as'   => 'faqs_categories.destroy', 'uses'   => 'FaqCategoryController@destroy']);
+
+
+
+		Route::get('questions/{id}', ['as'           => 'questions.index', 'uses'           => 'QuestionController@index']);
+		Route::get('questions/create', ['as'    => 'questions.create', 'uses'    => 'QuestionController@create']);
+		Route::post('questions/create', ['as'   => 'questions.store', 'uses'   => 'QuestionController@store']);
+		Route::get('questions/{id_question}/{id_form}/edit', ['as' => 'questions.edit', 'uses' => 'QuestionController@edit']);
+		Route::patch('questions/{id}', ['as'    => 'questions.update', 'uses'    => 'QuestionController@update']);
+		Route::delete('questions/{id}', ['as'   => 'questions.destroy', 'uses'   => 'QuestionController@destroy']);
+
+		Route::get('questions_short/{id}', ['as'           => 'questions_short.index', 'uses'           => 'QuestionController@index_corto']);
+		Route::get('questions_short/create', ['as'    => 'questions_short.create', 'uses'    => 'QuestionController@create']);
+		Route::post('questions_short/create', ['as'   => 'questions_short.store', 'uses'   => 'QuestionController@store_short']);
+		Route::get('questions_short/{id_question}/{id_form}/edit', ['as' => 'questions_short.edit', 'uses' => 'QuestionController@edit_corto']);
+		Route::patch('questions_short/{id}', ['as'    => 'questions_short.update', 'uses'    => 'QuestionController@update_corto']);
+		Route::delete('questions_short/{id}', ['as'   => 'questions_short.destroy', 'uses'   => 'QuestionController@destroy_short']);
+		Route::get('answers_short/{id}/{form_id}/index', ['as' => 'answers_short.index', 'uses' => 'AnswerController@index_corto']);
+		Route::post('answers_short/create', ['as'   => 'answers_short.store', 'uses'   => 'AnswerController@store_corto']);
+		Route::delete('answers_short/{id}', ['as'   => 'answers_short.destroy', 'uses'   => 'AnswerController@destroy_corto']);
+		Route::get('answers_short/{id_question}/{id_form}/{id_answer}/edit', ['as' => 'answers_short.edit', 'uses' => 'AnswerController@edit_corto']);
+		Route::patch('answers_short/{id}', ['as'    => 'answers_short.update', 'uses'    => 'AnswerController@update_corto']);
+
+		Route::get('answers/{id}/{form_id}/index', ['as' => 'answers.index', 'uses' => 'AnswerController@index']);
+//		Route::get('answers/{id}/create', ['as'    => 'answers.create', 'uses'    => 'AnswerController@create']);
+		Route::post('answers/create', ['as'   => 'answers.store', 'uses'   => 'AnswerController@store']);
+		Route::get('answers/{id_question}/{id_form}/{id_answer}/edit', ['as' => 'answers.edit', 'uses' => 'AnswerController@edit']);
+		Route::patch('answers/{id}', ['as'    => 'answers.update', 'uses'    => 'AnswerController@update']);
+		Route::delete('answers/{id}', ['as'   => 'answers.destroy', 'uses'   => 'AnswerController@destroy']);
+
+		Route::get('forms', ['as'           => 'forms.index', 'uses'           => 'FormController@index']);
+		Route::get('forms/create', ['as'    => 'forms.create', 'uses'    => 'FormController@create']);
+		Route::post('forms/create', ['as'   => 'forms.store', 'uses'   => 'FormController@store']);
+		Route::get('forms/{id}/edit', ['as' => 'forms.edit', 'uses' => 'FormController@edit']);
+		Route::patch('forms/{id}', ['as'    => 'forms.update', 'uses'    => 'FormController@update']);
+		Route::delete('forms/{id}', ['as'   => 'forms.destroy', 'uses'   => 'FormController@destroy']);
+		Route::get('forms/modificaEstado/{id}', ['as' => 'form.modificaEstado', 'uses'      => 'FormController@modificaEstado']);
+
+
+		Route::get('way/{id}', ['as'           => 'way.index', 'uses'           => 'FormController@way']);
+		Route::get('forms_questions_answers/{id}', ['as'           => 'forms_questions_answers.index', 'uses'           => 'FormController@forms_questions_answers']);
+		Route::post('forms_questions_answers', ['as'   => 'forms_questions_answers.store', 'uses'   => 'FormController@store_camino']);
 
 		Route::get('permissions', ['as'           => 'permissions.index', 'uses'           => 'PermissionController@index']);
 		Route::get('permissions/create', ['as'    => 'permissions.create', 'uses'    => 'PermissionController@create']);
@@ -90,6 +158,18 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('advantages/{id}/edit', ['as' => 'advantages.edit', 'uses' => 'AdvantagesController@edit']);
 		Route::patch('advantages/{id}', ['as'    => 'advantages.update', 'uses'    => 'AdvantagesController@update']);
 		Route::delete('advantages/{id}', ['as'   => 'advantages.destroy', 'uses'   => 'AdvantagesController@destroy']);
+
+		Route::get('advertises/index', ['as'      => 'advertises.index', 'uses'           => 'AdvertiseController@index']);
+		Route::get('advertises/{id}/create', ['as'    => 'advertises.create', 'uses'    => 'AdvertiseController@create']);
+		Route::get('advertises/{id}/edit', ['as' => 'advertises.edit', 'uses' => 'AdvertiseController@edit']);
+		Route::patch('advertises/{id}', ['as'    => 'advertises.update', 'uses'    => 'AdvertiseController@update']);
+		Route::delete('advertises/{id}', ['as'   => 'advertises.destroy', 'uses'   => 'AdvertiseController@destroy']);
+
+		Route::get('contact/index', ['as'      => 'contact.index', 'uses'           => 'ContactController@index']);
+		Route::get('contact/{id}/create', ['as'    => 'contact.create', 'uses'    => 'ContactController@create']);
+		Route::get('contact/{id}/edit', ['as' => 'contact.edit', 'uses' => 'ContactController@edit']);
+		Route::patch('contact/{id}', ['as'    => 'contact.update', 'uses'    => 'ContactController@update']);
+		Route::delete('contact/{id}', ['as'   => 'contact.destroy', 'uses'   => 'ContactController@destroy']);		
 
 		Route::get('components/{id}/index', ['as'      => 'components.index', 'uses'           => 'AdvantagesController@index']);
 		Route::get('components/{id}/create', ['as'    => 'components.create', 'uses'    => 'AdvantagesController@create']);

@@ -29,10 +29,10 @@
 								</tr>
 								&nbsp;
 		                    	<tr class="">
-                          {!!link_to_route('advantages.index', $title = 'Ventajas y Desventajas',
-                          $parameters = ['id' => $company->id],
-                          $attributes = ['class'=>'btn btn-lg bg-blue']);!!}	
-								</tr>
+                            {!!link_to_route('advantages.index', $title = 'Ventajas y Desventajas',
+                            $parameters = ['id' => $company->id],
+                            $attributes = ['class'=>'btn btn-lg bg-blue']);!!}	
+								          </tr>
 		                    </tbody>
 		                </table>	
 					</div>

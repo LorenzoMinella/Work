@@ -46,6 +46,49 @@
 	})(window,document,'script','dataLayer','GTM-M77GWGH');
 	</script>
 	<!-- End Google Tag Manager -->
+<style type="text/css">
+    /*//// Just styling ////*/
+.popup-content h3{
+  border-bottom: 1px solid white;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+
+}
+/*//////////////////////*/
+.popup{
+  left: 0;
+  position: fixed;
+  top: 25%;
+  transition: left .5s ease;
+}
+.popup-content{
+    border-style: solid;
+    border-color: #9DABC8;
+    border-bottom-right-radius: 10px;
+    background-color: solid #fff;
+    color: grey;
+    float: left;
+    height: 420px;
+    padding: 1em;
+    width: 250px;    
+overflow: auto;
+}
+
+.close{
+  left: -250px;
+}
+
+.button{
+  background-color: #614FA2;  
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  float: left;
+  height: 50px;
+  padding-top: 1.5em;
+  width: 25px;  
+}
+
+</style>
 </head>
 
 <body>
@@ -55,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -89,19 +132,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Navbar End -->
 
    <!-- START HOME -->
+    <br>
+    <br>
+
     <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{URL::asset('img/features/img-1.png') }}"  class="d-block " width="100%" height="750px" src="#" alt="First slide" >
-            <div class="carousel-caption">
-                   <h3 class="h3-responsive home-title">Alarmas para negocio</h3>
-                    <a href="{{ route('companies.comparator')}}" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+        <div id="carouselExampleControls" class="carousel slide" >
+          <div class="carousel-inner">
+            <div class="item active">
+              <img class="d-block " width="100%" height="100%" src="{{URL::asset($banners->banner_url)}}"
+                alt="First slide">
+              <div class="carousel-caption">
+                                        <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
+                                            <a href="{{ route('companies.comparator')}}" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
     <!-- END HOME -->
 
     <!-- START CLIENT-LOGO -->
@@ -151,38 +206,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                	<br><br>
-                    <h1 class="title-heading text-center">Guía gratuita de compras de alarmas</h1>
-                    <p class="title-desc text-center text-white-50 mt-4">{{$homepages->description_home}}</p>
+                    	<br><br>
+                        <h1 class="title-heading text-center">Guía gratuita de compras de alarmas</h1>
+                        <p class="title-desc text-center text-white-50 mt-4">{{$homepages->description_home}}</p>
+                            
+                        <div class="mt-5" align="center">
+                                <a href="{{ route('companies.comparator')}}" class="btn btn-custom btn-round">QUIERO MI GUIA</a>
+                        </div>
                         
-                    <div class="mt-5" align="center">
-                            <a href="{{URL::asset('guia/guia-seleccion-de-alarmas.pdf') }}"  target="_blank" class="btn btn-custom btn-round">QUIERO MI GUIA</a>
-                    </div>
-                    
 
 
-                    <br><br><br>
-                    <h2 class="title-desca text-center mt-4">Empresas con las que trabajamos</h2>
-                    
+                        <br><br><br>
+                        <h2 class="title-desca text-center mt-4">Empresas con las que trabajamos</h2>
+                        
 
-                    <div class="col-lg-6 swiper-container">
-                    <div class="swiper-wrapper mt-4">
-                        @foreach($companies as $company)
-                            <div class="swiper-slide" align="center">
-                                <img src="{{URL::asset($company->link_image)}}"  class="img-fluid" />
+                        <div class="col-lg-6 swiper-container">
+                            <div class="swiper-wrapper mt-4">
+                                @foreach($companies as $company)
+                                    <div class="swiper-slide" align="center">
+                                        <img src="{{URL::asset($company->link_image)}}"  class="img-fluid" />
+                                    </div>
+                                @endforeach
                             </div>
-                        @endforeach
-                    </div>
 
-                    <!-- Add Arrows  -->
-                    <div class="swiper-button-next">
-                        <i class="mdi mdi-chevron-right"></i>
-                    </div>
-                    <div class="swiper-button-prev ">
-                        <i class="mdi mdi-chevron-left"></i>
-                    </div>
-                    <br><br><br>
-                </div>
+                        <!-- Add Arrows  -->
+                            <div class="swiper-button-next">
+                                <i class="mdi mdi-chevron-right"></i>
+                            </div>
+
+                            <div class="swiper-button-prev ">
+                                <i class="mdi mdi-chevron-left"></i>
+                            </div>
+                            <br><br><br>
+                        </div>
                 </div>
         <div class="container">
             <h2 class="title-desca text-center mt-4">¿Qué alarma buscas?</h2>
@@ -191,7 +247,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="col-lg-6">
                     <div class="service-box p-2 text-center mt-5"  >
                         
-                        <a href="{{ route('companies.homealarms')}}"><h5 align="center"><span><img src="{{URL::asset('img/icon/home.png') }}" class="img-fluid" alt=""></span><u> Alarmas para casa</u></h5></a>
+                        <a class="title-heading text-center" style="color: #ffffff" href="{{ route('companies.homealarms')}}"> <span><img src="{{URL::asset('img/icon/home.png') }}" class="img-fluid" alt=""></span>  Alarmas para negocio  </a>
 
                         
                     </div>
@@ -199,7 +255,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="col-lg-6">
                     <div class="servicess-box p-2 text-center mt-5">
                         
-                        <a href="{{ route('companies.business_alarms')}}"><h5 align="center"><span><img src="{{URL::asset('img/icon/shop.png') }}" class="img-fluid" alt=""></span><u> Alarmas para negocio</u></h5></a>
+                        <a class="title-heading text-center" style="color: #ffffff" href="{{ route('companies.business_alarms')}}"> <span><img src="{{URL::asset('img/icon/shop.png') }}" class="img-fluid" alt=""></span>  Alarmas para negocio  </a>
 
                         
                     </div>              
@@ -258,11 +314,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <!-- START SERVICES -->
-    <section class="client-logo" id="services">
+    <section class="section bg-light"  id="services">
         <div class="container">
-            <div class="row mt-5 pt-3 vertical-content text-center">
+            <div class="row mt-5 pt-3 vertical-content">
                 <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
+                    <div class="services-box bg-white p-5 btn-rounde mt-4">
                         <div class="services-icon text-center">
                             <img src="{{URL::asset('img/alarmalia/conocimientomercado.png') }}" class="img-fluid" alt="">
                         </div><br>
@@ -271,7 +327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
+                    <div class="services-box bg-white p-5 btn-rounde mt-4">
                         <div class="services-icon text-center">
                             <img src="{{URL::asset('img/alarmalia/ahorro.png') }}" class="img-fluid" alt="">
                         </div><br>
@@ -280,7 +336,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
+                    <div class="services-box bg-white p-5 btn-rounde mt-4">
                         <div class="services-icon text-center">
                             <img src="{{URL::asset('img/alarmalia/serviciogratuito.png') }}" class="img-fluid" alt="">
                         </div><br>
@@ -291,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="row mt-4">
                 <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
+                    <div class="services-box bg-white p-5 btn-rounde mt-4">
                         <div class="services-icon text-center">
                             <img src="{{URL::asset('img/alarmalia/rapidez.png') }}" class="img-fluid" alt="">
                         </div><br>
@@ -300,7 +356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
+                    <div class="services-box bg-white p-5 btn-rounde mt-4">
                         <div class="services-icon text-center">
                             <img src="{{URL::asset('img/alarmalia/resultadospersonalizados.png') }}" class="img-fluid" alt="">
                         </div><br>
@@ -309,7 +365,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="servicio-box bg-white p-5 btn-rounde mt-4">
+                    <div class="services-box bg-white p-5 btn-rounde mt-4">
                         <div class="services-icon text-center">
                             <img src="{{URL::asset('img/alarmalia/somosindependientes.png') }}" class="img-fluid" alt="">
                         </div><br>
@@ -333,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </p>
                     <center>
                         <div class="mt-5">
-                            <a href="" class="btn btn-custom  btn-round">COMPARAR AHORA</a>
+                            <a href="{{ route('companies.comparator')}}" class="btn btn-custom  btn-round">COMPARAR AHORA</a>
                         </div>
                     </center>
                 </div>
@@ -376,15 +432,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
 					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
                 	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -403,7 +458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>
@@ -431,6 +486,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="{{ asset('js/contact.js') }}"></script>
     <script src="{{ asset('js/plugins-init.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script type="text/javascript">
+        $('.button').on('click', function(e) {
+          $('.popup').toggleClass("close"); 
+          $('.button').toggleClass("button-closed");
+          e.preventDefault();      
+        });
+    </script>
 
 </body>
 

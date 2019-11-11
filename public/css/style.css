@@ -239,20 +239,6 @@ p {
   color: white;
 }
 
-.btn-roundess {
-  background-color: #614FA2;
-  color: white;
-  width: 250px;
-  height: 110px;
-}
-.btn-roundesss {
-  background-color: #EFF5F8;
-  border-color: #EFF5F8;
-  color: #614FA2;
-  width: 250px;
-  height: 110px;
-}
-
 .btn-round {
   border-radius: 50px !important;
 }
@@ -870,45 +856,8 @@ p {
   font-size: 40px;
 }
 
-
-#form {
-  width: 250px;
-  margin: 0 auto;
-  height: 50px;
-}
-
-#form p {
-  text-align: center;
-}
-
-#form label {
-  font-size: 20px;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-label {
-  color: grey;
-}
-
-.clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
-
-label:hover,
-label:hover ~ label {
-  color: orange;
-}
-
-input[type="radio"]:checked ~ label {
-  color: orange;
-}
-
 .pricing-box {
-  border: 1px solid #614FA2;
+  border: 1px solid #eeeef4;
   border-radius: 10px;
 }
 
@@ -965,7 +914,6 @@ input[type="radio"]:checked ~ label {
 .client-logo {
   background-color: #EFF5F8;
   padding-bottom: 30px;
-  
 }
 .cliente-logo {
   background-color: #EFF5F8;
@@ -1184,7 +1132,7 @@ transform-style: preserve-3d;
     height: 50px;
     border-radius: 50%;
     line-height: 32px;
-    background: #fff;
+    background: #614FA2;
     border: 7px solid #614FA2;
     font-size:15px;
     font-weight: 600;
@@ -1565,14 +1513,7 @@ label .glyphicon {
 }
 
 
-.selector{
-  height: 30px;
-  width: 300px;
-  font-family: Poppins;
-  font-size: 14px;
-  padding-left: 30px;
-  color: #565656;
-}
+
 
 
 @media (min-width: 200px) and (max-width: 768px) {
@@ -1615,11 +1556,6 @@ label .glyphicon {
     font-size: 38px;
     color: #663399;
   }
-
-  .h3-custom {
-    font-size: 30px;
-    color: #663399;
-  }
   .navbar-button {
     margin-top: 15px;
     margin-left: 0px;
@@ -1633,7 +1569,6 @@ label .glyphicon {
   .features-title {
     font-size: 28px;
   }
-
   .home-button span {
     display: none;
   }

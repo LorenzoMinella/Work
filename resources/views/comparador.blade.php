@@ -51,7 +51,7 @@
 <body>
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -84,21 +84,11 @@
     </nav>
     <!-- Navbar End -->
 
+ 
+    <br>
 
     <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{URL::asset('img/features/img-1.png') }}"  class="d-block " width="100%" height="750px" src="#" alt="First slide" >
-            <div class="carousel-caption">
-                   <h3 class="h3-responsive home-title">Alarmas para negocio</h3>
-                    <a href="#" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-
  <!-- START CLIENT-LOGO -->
     <section class="cliente-logo pt-3">
         <div class="container">
@@ -108,13 +98,13 @@
                     
                     <br>
             <div class="progress">
-                <div class="progress-bar" style="width:100%; background:#614FA2;">
+                <div class="progress-bar" style="width:1%; background:#614FA2;">
                     <span ></span>
-                    <div class="progress-value"><span><img src="{{URL::asset('img/alarmalia/oscuro.png') }}" alt="" height="100%" width="100%"></span></div>
+                    <div class="progress-value"><span><img src="{{URL::asset('img/alarmalia/claro.png') }}" alt="" height="100%" width="100%"></span></div>
                 </div>
             </div>
             
-            <h3 class="title-headin"> Quedan: 30 segundos </h3>
+            <h3 class="title-headin"> </h3>
                 </div>
                             
             </div>
@@ -127,25 +117,22 @@
         <div class="container">
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-18">
+                    {!! Form::open(array('route' => 'comparator.store','method'=>'POST')) !!}
+                    {{ csrf_field() }}
                     <div class="col-lg-12">
-                    <h4 class="title-heading">¿ Qué quieres hacer con el sistema de alarma?</h4>
-            
-            <br><br>
-                <div class="quiz" id="quiz" data-toggle="buttons">
-           <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">1 One</label>
-           <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2">2 Two</label>
-           <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">3 Three</label>
-           <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">4 Four</label>
-       </div>
-                
-                <center>
-                    <div class="mt-5">
-                            <a href="" class="btn btn-custom  btn-round">ANTERIOR</a>
-                        
-
-                            <a href="" class="btn btn-custom  btn-round">SIGUIENTE</a>
+                        <h4 class="title-heading">{{$first_question->title}}</h4>            
+                        <br><br>
+                        <div class="quiz" id="quiz"  >
+                            @foreach($answers as $answer)
+                               <label class="element-animation2 btn btn-lg btn-primary btn-block"> 
+                               <input style="color: #212529;" type="radio" name="q_answer" value="1"> <a style="color: #212529;" class="sm2_link" href="{{route('companies.comparator_camino', $answer->next_question)}}">{{$answer->content}}</a>  
+                               </label>
+                            @endforeach
                         </div>
-                    </center>
+
+                    </div>
+                    {!! Form::close() !!}
+                </div>
             </div>
         </div>
     </section>
@@ -169,15 +156,14 @@
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -196,7 +182,7 @@
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>
@@ -224,6 +210,13 @@
     <script src="{{ asset('js/contact.js') }}"></script>
     <script src="{{ asset('js/plugins-init.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script type="text/javascript">
+        $('.sm2_link').on('click', function () {
+          this.parentNode.click()
+        });        
+    </script>
+
 
 </body>
 

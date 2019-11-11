@@ -51,7 +51,7 @@
 <body>
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -85,18 +85,21 @@
     <!-- Navbar End -->
 
 
+    <br>
+    <br>
+
     <section>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{URL::asset('img/features/img-1.png') }}"  class="d-block " width="100%" height="750px" src="#" alt="First slide" >
-            <div class="carousel-caption">
-                   <h3 class="h3-responsive home-title">Alarmas para negocio</h3>
-                    <a href="#" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+        <div id="carouselExampleControls" class="carousel slide" >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block " width="100%" height="100%" src="{{URL::asset($banners->banner_url)}}" alt="First slide">
+              <div class="carousel-caption">
+                                        <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
+                                            <a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
 
@@ -109,26 +112,30 @@
                     <h4 class="text-center">PREGUNTAS FRECUENTES</h4>
             
             <br><br>
-<div class="accordion" id="accordionExample">
-    @foreach($faqs as $faq)
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $faq->id }}" aria-expanded="true" aria-controls="collapse{{ $faq->id }}">
-              <h1 class="title-headin text-center">{{ $faq->question }}</h1>
-            </button>
-          
-        </div>
+    @foreach($categories as $categorie)
+            <div class="accordion" id="accordionExample">
+                <br>                
+                <center><img class="d-block " width="10%" height="10%" src="{{URL::asset($categorie->category_icon)}}" alt="First slide"> <h3 class="title-headin text-center">{{ $categorie->category_name }}</h3></center>
+                <br>
+                @foreach( (\App\Faq::where('faq_category_id', '=',$categorie->id)->get()) as $faq)
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $faq->id }}" aria-expanded="true" aria-controls="collapse{{ $faq->id }}">
+                          <h1 class="title-headin text-center">{{ $faq->question }}</h1>
+                        </button>
+                      
+                    </div>
 
-        <div id="collapse{{ $faq->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-            <p align="justify">{{ $faq->content }} </p>
-          </div>
-        </div>
-      </div>
+                    <div id="collapse{{ $faq->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p align="justify">{{ $faq->content }} </p>
+                      </div>
+                    </div>
+                  </div>
+                @endforeach
+            </div>
     @endforeach
-</div>
-
             </div>
         </div>
     </section>
@@ -171,15 +178,14 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -198,7 +204,7 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>

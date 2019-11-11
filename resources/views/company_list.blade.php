@@ -46,87 +46,87 @@
 	})(window,document,'script','dataLayer','GTM-M77GWGH');
 	</script>
 	<!-- End Google Tag Manager -->
-<style type="text/css">
-.carousel-caption {
-top: 60%;
-transform: translateY(-50%);
-bottom: initial;
-left: 60%;
--webkit-transform-style: preserve-3d;
--moz-transform-style: preserve-3d;
-transform-style: preserve-3d;
-}
-  
-/*  bhoechie tab */
-div.bhoechie-tab-container{
-  z-index: 10;
-  background-color: #ffffff;
-  padding: 0 !important;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  border:1px solid #ddd;
-  margin-top: 20px;
-  margin-left: 50px;
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  background-clip: padding-box;
-  opacity: 0.97;
-  filter: alpha(opacity=97);
-}
-div.bhoechie-tab-menu{
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group{
-  margin-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group>a{
-  margin-bottom: 0;
-}
-div.bhoechie-tab-menu div.list-group>a .glyphicon,
-div.bhoechie-tab-menu div.list-group>a .fa {
-  color: #5A55A3;
-}
-div.bhoechie-tab-menu div.list-group>a:first-child{
-  border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a:last-child{
-  border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
-}
-div.bhoechie-tab-menu div.list-group>a.active,
-div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
-div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background-color: #5A55A3;
-  background-image: #5A55A3;
-  color: #ffffff;
-}
-div.bhoechie-tab-menu div.list-group>a.active:after{
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  margin-top: -13px;
-  border-left: 0;
-  border-bottom: 13px solid transparent;
-  border-top: 13px solid transparent;
-  border-left: 10px solid #5A55A3;
-}
+    <style type="text/css">
+    .carousel-caption {
+    top: 60%;
+    transform: translateY(-50%);
+    bottom: initial;
+    left: 60%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+      
+    /*  bhoechie tab */
+    div.bhoechie-tab-container{
+      z-index: 10;
+      background-color: #ffffff;
+      padding: 0 !important;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      border:1px solid #ddd;
+      margin-top: 20px;
+      margin-left: 50px;
+      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      background-clip: padding-box;
+      opacity: 0.97;
+      filter: alpha(opacity=97);
+    }
+    div.bhoechie-tab-menu{
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+    }
+    div.bhoechie-tab-menu div.list-group{
+      margin-bottom: 0;
+    }
+    div.bhoechie-tab-menu div.list-group>a{
+      margin-bottom: 0;
+    }
+    div.bhoechie-tab-menu div.list-group>a .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a .fa {
+      color: #5A55A3;
+    }
+    div.bhoechie-tab-menu div.list-group>a:first-child{
+      border-top-right-radius: 0;
+      -moz-border-top-right-radius: 0;
+    }
+    div.bhoechie-tab-menu div.list-group>a:last-child{
+      border-bottom-right-radius: 0;
+      -moz-border-bottom-right-radius: 0;
+    }
+    div.bhoechie-tab-menu div.list-group>a.active,
+    div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+    div.bhoechie-tab-menu div.list-group>a.active .fa{
+      background-color: #5A55A3;
+      background-image: #5A55A3;
+      color: #ffffff;
+    }
+    div.bhoechie-tab-menu div.list-group>a.active:after{
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      margin-top: -13px;
+      border-left: 0;
+      border-bottom: 13px solid transparent;
+      border-top: 13px solid transparent;
+      border-left: 10px solid #5A55A3;
+    }
 
-div.bhoechie-tab-content{
-  background-color: #ffffff;
-  /* border: 1px solid #eeeeee; */
-  padding-left: 20px;
-  padding-top: 10px;
-}
+    div.bhoechie-tab-content{
+      background-color: #ffffff;
+      /* border: 1px solid #eeeeee; */
+      padding-left: 20px;
+      padding-top: 10px;
+    }
 
-div.bhoechie-tab div.bhoechie-tab-content:not(.active){
-  display: none;
-}
-</style>
+    div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+      display: none;
+    }
+    </style>
 
     
 </head>
@@ -138,7 +138,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" style="position: sticky;">
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo text-uppercase" href="{{ route('site.home') }}">
@@ -172,19 +172,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Navbar End -->
 
    <!-- START HOME -->
+    <br>
+    <br>
+
     <section>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block " width="100%" height="100%" src="{{URL::asset($banners->banner_url)}}"
-        alt="First slide">
-      <div class="carousel-caption">
-                                <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
-                                    <a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
-      </div>
-    </div>
-  </div>
-</div>
+		<div id="carouselExampleControls" class="carousel slide" >
+		  <div class="carousel-inner">
+		    <div class="carousel-item active">
+		      <img class="d-block " width="100%" height="100%" src="{{URL::asset($banners->banner_url)}}"
+		        alt="First slide">
+		      <div class="carousel-caption">
+		                                <h3 class="h3-responsive home-title">{{$banners->title}}</h3>
+		                                    <a href="{{ url($banners->link_url) }}" target="_blank" class="btn btn-custom btn-round">COMPARAR ALARMAS </a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
     </section>
     <!-- END HOME -->
 
@@ -325,15 +328,14 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
                     <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.list')}}">Empresas</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white">Glosario</h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.glosary')}}">Glosario</a></h5>
                 </div>
                 <div class="col-lg-1 p-5">
-                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contácto</a></h5>
+                    <h5 class="f-18 text-white"><a class="f-18 text-white" href="{{ route('companies.contact')}}">Contacto</a></h5>
                 </div>
                 <div class="col-lg-2 p-5 text-center">
-					<a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
-                	<a href="#"><img src="{{URL::asset('img/icon/instagram.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/linkedin.png') }}" alt="" height="20"></a>
+                  <a href="#"><img src="{{URL::asset('img/icon/facebook.png') }}" alt="" height="20"></a>
                 </div>
                
 
@@ -352,7 +354,7 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
 
     <!-- START FOOTER-AlT -->
     <section class="foter">
-        <div class="row mt-1" >
+        <div>
             <div class="col-lg-12">
                 <p class="footer-alt text-center mb-0">© 2019 Alarmalia | Todos los derechos reservados.  Aviso legal. Términos y condiciones | Política de cookies. </p>
             </div>
@@ -380,19 +382,19 @@ Descubre en 3 minutos la alarma que mejor se adapta a ti.</p>
     <script src="{{ asset('js/contact.js') }}"></script>
     <script src="{{ asset('js/plugins-init.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
- <script type="text/javascript">
-$(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-});
+     <script type="text/javascript">
+        $(document).ready(function() {
+            $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+                e.preventDefault();
+                $(this).siblings('a.active').removeClass("active");
+                $(this).addClass("active");
+                var index = $(this).index();
+                $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+                $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+            });
+        });
 
-</script>
+    </script>
 </body>
 
 </html>
